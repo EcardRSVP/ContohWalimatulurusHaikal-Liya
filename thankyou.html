@@ -1,23 +1,54 @@
-// Countdown to wedding date
-const countdownDate = new Date("June 1, 2025 10:00:00").getTime();
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thank You</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f0f8ff;
+      padding: 50px;
+    }
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #4CAF50;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Terima Kasih!</h1>
+    <p>Form anda telah berjaya dihantar.</p>
+    <p>Sila klik butang di bawah untuk kembali ke laman utama.</p>
+    <button onclick="window.location.href='index.html'">Isi Borang Lagi</button>
+  </div>
 
-const countdownElement = document.getElementById("countdown");
+  <!-- Countdown Display -->
+  <p id="countdown"></p>
 
-function updateCountdown() {
-  const now = new Date().getTime();
-  const timeLeft = countdownDate - now;
-
-  const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-  countdownElement.innerHTML = `Wedding in ${days}d ${hours}h ${minutes}m ${seconds}s`;
-
-  if (timeLeft < 0) {
-    clearInterval(countdownInterval);
-    countdownElement.innerHTML = "Wedding has started!";
-  }
-}
-
-const countdownInterval = setInterval(updateCountdown, 1000);
+  <!-- Link to script.js for countdown functionality -->
+  <script src="script.js"></script>
+</body>
+</html>
