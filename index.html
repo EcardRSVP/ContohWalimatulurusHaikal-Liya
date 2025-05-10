@@ -22,32 +22,16 @@
 
   <section class="rsvp">
     <h2>Konfirmasi Kehadiran</h2>
-
-    <!-- Contact form -->
-    <form action="https://formsubmit.co/syahmisyafiy@gmail.com" method="POST">
-      <input type="hidden" name="_next" value="https://nna-nabilaa.github.io/NNA-Store">
-      <input type="text" name="name" placeholder="Nama Anda" required>
+    <form action="https://formsubmit.co/your@email.com" method="POST">
+      <input type="hidden" name="_next" value="thankyou.html">
+      <input type="text" name="nama" placeholder="Nama Anda" required>
       <input type="email" name="email" placeholder="Email" required>
       <button type="submit">Kirim</button>
     </form>
-
-    <!-- Confirmation message, hidden by default -->
-    <div id="confirmation-message" style="display: none;">
-      <h3>Terima kasih telah mengkonfirmasi kehadiran Anda!</h3>
-      <button onclick="window.location.href='/'">Kembali ke Beranda</button>
-    </div>
   </section>
 
   <footer>
     <p>Terima kasih telah menjadi bagian dari hari bahagia kami.</p>
   </footer>
-
-  <script>
-    // Check if the form was submitted successfully (FormSubmit redirects to a thank-you page)
-    if (window.location.href.includes("formsubmit.co")) {
-      document.getElementById('rsvp-form').style.display = 'none'; // Hide the form
-      document.getElementById('confirmation-message').style.display = 'block'; // Show the confirmation message
-    }
-  </script>
 </body>
 </html>
