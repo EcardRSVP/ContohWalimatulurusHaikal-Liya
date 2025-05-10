@@ -1,34 +1,66 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Georgia', serif;
   text-align: center;
-  background-color: #f0f8ff;
+  background: url('https://www.transparenttextures.com/patterns/cream-paper.png'); /* Soft textured paper background */
+  color: #333;
   margin: 0;
   padding: 0;
 }
 
 section {
-  padding: 20px;
-  margin: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 30px auto;
+  padding: 30px;
+  max-width: 700px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hero h1 {
+  font-family: 'Times New Roman', serif;
+  font-size: 36px;
+  color: #8B0000; /* Dark red */
+}
+
+.hero p {
+  font-size: 20px;
+  color: #5A5A5A;
+}
+
+h2 {
+  font-size: 28px;
+  color: #4A4A4A;
+  margin-bottom: 10px;
 }
 
 input, button {
   padding: 10px;
   margin: 10px;
+  width: 80%;
+  max-width: 400px;
+  font-size: 16px;
+}
+
+input {
+  border: 1px solid #ccc;
+  border-radius: 6px;
 }
 
 button {
-  background-color: #4CAF50;
+  background-color: #8B0000;
   border: none;
   color: white;
   font-size: 16px;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #A52A2A;
 }
 
-h1 {
-  color: #4CAF50;
+footer {
+  font-size: 14px;
+  color: #777;
+  margin-top: 40px;
 }
