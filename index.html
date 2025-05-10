@@ -23,14 +23,14 @@
   <section class="rsvp">
     <h2>Konfirmasi Kehadiran</h2>
 
-    <!-- Contact form added here -->
+    <!-- Contact form -->
     <form action="https://formsubmit.co/your@email.com" method="POST" id="rsvp-form">
       <input type="text" name="name" placeholder="Nama Anda" required>
       <input type="email" name="email" placeholder="Email" required>
       <button type="submit">Kirim</button>
     </form>
 
-    <!-- Confirmation message with Back button -->
+    <!-- Confirmation message, hidden by default -->
     <div id="confirmation-message" style="display: none;">
       <h3>Terima kasih telah mengkonfirmasi kehadiran Anda!</h3>
       <button onclick="window.location.href='/'">Kembali ke Beranda</button>
@@ -42,16 +42,11 @@
   </footer>
 
   <script>
-    // Hide form and show confirmation message after form submission
-    document.getElementById('rsvp-form').addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevent form from submitting normally
-      document.getElementById('rsvp-form').style.display = 'none'; // Hide form
-      document.getElementById('confirmation-message').style.display = 'block'; // Show confirmation message
-      // Optionally, you can also submit the form programmatically here if needed
-      setTimeout(function() {
-        document.getElementById('rsvp-form').submit();
-      }, 1000); // delay form submission for a moment
-    });
+    // Check if the form was submitted successfully (FormSubmit redirects to a thank-you page)
+    if (window.location.href.includes("formsubmit.co")) {
+      document.getElementById('rsvp-form').style.display = 'none'; // Hide the form
+      document.getElementById('confirmation-message').style.display = 'block'; // Show the confirmation message
+    }
   </script>
 </body>
 </html>
