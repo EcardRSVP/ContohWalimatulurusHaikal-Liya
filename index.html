@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Undangan Pernikahan</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <section class="hero">
@@ -22,29 +22,21 @@
 
   <section class="rsvp">
     <h2>Konfirmasi Kehadiran</h2>
-    <form action="https://formsubmit.co/syahmisyafiy@gmail.com" method="POST">
-      <input type="hidden" name="_next" value="thankyou.html">
-      <input type="text" name="nama" placeholder="Nama Anda" required>
-      <input type="email" name="email" placeholder="Email" required>
+    <form action="https://formsubmit.co/your@email.com" method="POST">
+      <input type="text" name="name" placeholder="Nama Anda" required />
+      <input type="email" name="email" placeholder="Email" required />
       <button type="submit">Kirim</button>
     </form>
   </section>
-
-  <section class="countdown">
-    <h2>Countdown ke Hari Bahagia</h2>
-    <div id="timer">
-      <span id="days">--</span> hari 
-      <span id="hours">--</span> jam 
-      <span id="minutes">--</span> minit 
-      <span id="seconds">--</span> saat
-    </div>
-  </section>
-
 
   <footer>
     <p>Terima kasih telah menjadi bagian dari hari bahagia kami.</p>
   </footer>
 
+  <!-- Countdown Display -->
+  <p id="countdown"></p>
+
+  <!-- Link to script.js for countdown functionality -->
   <script src="script.js"></script>
 </body>
 </html>
