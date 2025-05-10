@@ -1,17 +1,23 @@
-// Countdown to the wedding date
-const countdown = () => {
-  const eventDate = new Date("2025-06-01T10:00:00").getTime();
+// Countdown to wedding date
+const countdownDate = new Date("June 1, 2025 10:00:00").getTime();
+
+const countdownElement = document.getElementById("countdown");
+
+function updateCountdown() {
   const now = new Date().getTime();
-  const distance = eventDate - now;
+  const timeLeft = countdownDate - now;
 
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  document.getElementById("countdown").textContent = `Hitung mundur hari: ${days} hari lagi!`;
-};
+  const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-setInterval(countdown, 1000);
-countdown();
+  countdownElement.innerHTML = `Wedding in ${days}d ${hours}h ${minutes}m ${seconds}s`;
 
-// Alert when the form is submitted
-document.querySelector('form')?.addEventListener('submit', function (e) {
-  alert('Terima kasih atas konfirmasi kehadiran Anda!');
-});
+  if (timeLeft < 0) {
+    clearInterval(countdownInterval);
+    countdownElement.innerHTML = "Wedding has started!";
+  }
+}
+
+const countdownInterval = setInterval(updateCountdown, 1000);
