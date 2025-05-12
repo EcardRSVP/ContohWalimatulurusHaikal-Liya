@@ -1,43 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Undangan Pernikahan</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <section class="hero">
-    <h1>Undangan Pernikahan</h1>
-    <p>John & Sarah</p>
-    <p>Sabtu, 1 Juni 2025</p>
-  </section>
+<!-- Tambah ini di bawah bahagian utama laman RSVP anda -->
+<div style="text-align: center; margin-top: 30px;">
+  <!-- Butang Call -->
+  <a href="tel:+60198813267" class="btn">Call</a>
 
-  <section class="detail">
-    <h2>Detail Acara</h2>
-    <p>Tempat: Gedung Serbaguna, Jakarta</p>
-    <p>Jam: 10.00 - 13.00 WIB</p>
-    <a href="https://maps.app.goo.gl/6nA7t2u461TzFvYQA" target="_blank">Lihat Lokasi</a>
-  </section>
+  <!-- Butang Lokasi (contoh: Google Maps) -->
+  <a href="https://maps.app.goo.gl/KYZcM4NcTKrCdBi78?g_st=aw" target="_blank" class="btn">Lokasi Majlis</a>
 
-  <section class="rsvp">
-    <h2>Konfirmasi Kehadiran</h2>
-    <form action="https://formsubmit.co/syahmisyafiy@gmail.com" method="POST">
-      <input type="hidden" name="_redirect" value="https://nna-nabilaa.github.io/NNA-Store/thankyou.html">
-      <input type="text" name="name" placeholder="Nama Anda" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <button type="submit">Kirim</button>
-    </form>>
-  </section>
+  <!-- Butang RSVP -->
+  <a href="#rsvp-section" class="btn">RSVP</a>
 
-  <footer>
-    <p>Terima kasih telah menjadi bagian dari hari bahagia kami.</p>
-  </footer>
+  <!-- Butang Ucapan -->
+  <a href="#ucapan-section" class="btn">Ucapan</a>
+</div>
 
-  <!-- Countdown Display -->
-  <p id="countdown"></p>
-
-  <!-- Link to script.js for countdown functionality -->
-  <script src="script.js"></script>
-</body>
-</html>
+<!-- Gaya CSS ringkas untuk butang -->
+<style>
+  .btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  .btn:hover {
+    background-color: #45a049;
+  }
+</style>
