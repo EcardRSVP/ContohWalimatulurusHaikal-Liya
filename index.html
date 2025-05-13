@@ -119,6 +119,111 @@
       </form>
     </section>
 
+    <!-- Page 9 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RSVP</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .phone-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 10px;
+      padding: 12px 24px;
+      font-size: 16px;
+      color: white;
+      background-color: #28a745;
+      border: none;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .phone-button:hover {
+      background-color: #218838;
+    }
+
+    .phone-icon {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Contact</h2>
+
+  <!-- Button untuk Contact -->
+<button onclick="showContact()">Contact</button>
+
+  <!-- Tombol Telefon 1 -->
+  <a href="tel:+60198813267" class="phone-button">
+    <i class="fas fa-phone phone-icon"></i>
+    Nabilah
+  </a>
+
+  <!-- Tombol Telefon 2 -->
+  <a href="tel:+601157265723" class="phone-button">
+    <i class="fas fa-phone phone-icon"></i>
+    Atiqah
+  </a>
+
+</body>
+</html>
+        <!-- Tambah ini di bawah bahagian utama laman RSVP anda -->
+<div style="text-align: center; margin-top: 30px;">
+  <!-- Butang Call -->
+  <a href="tel:+60198813267" class="btn">Contact</a>
+
+  <!-- Butang Lokasi (contoh: Google Maps) -->
+  <a href="https://maps.app.goo.gl/KYZcM4NcTKrCdBi78?g_st=aw" target="_blank" class="btn">Lokasi Majlis</a>
+
+  <!-- Butang RSVP -->
+  <a href="#rsvp-section" class="btn">RSVP</a>
+
+  <!-- Butang Ucapan -->
+  <a href="#ucapan-section" class="btn">Ucapan</a>
+</div>
+
+<!-- Gaya CSS ringkas untuk butang -->
+<style>
+  .btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  .btn:hover {
+    background-color: #45a049;
+  }
+</style>
+
+        
+<!-- Button untuk Contact -->
+<button onclick="showContact()">Contact</button>
+
+<!-- Senarai nombor telefon tersembunyi -->
+<div id="contact-info" style="display: none; margin-top: 10px;">
+  <p><strong>Phone 1:</strong> <a href="tel:+60198813267">+60 19-8813267</a></p>
+  <p><strong>Phone 2:</strong> <a href="tel:+601157265723">+60 11-57265723</a></p>
+</div>
+
+<script>
+function showContact() {
+  var contactDiv = document.getElementById("contact-info");
+  if (contactDiv.style.display === "none") {
+    contactDiv.style.display = "block";
+  } else {
+    contactDiv.style.display = "none";
+  }
+}
+</script>
 
  <!-- Page 10 -->
         <!DOCTYPE html>
@@ -303,13 +408,6 @@
 </body>
 </html>
 
- <!-- ... semua section di atas ... -->
-
-<!-- Tambah kod footer di sini -->
-<!-- Footer Section -->
-<!-- Link Font Awesome (letak dalam <head> kalau belum ada) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 <!-- Font Awesome (letak dalam <head> jika belum ada) -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -345,140 +443,3 @@
     <i class="fas fa-map-marker-alt"></i><br>Location
   </a>
 </footer>
-
-
-<!DOCTYPE html>
-<html lang="ms">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jemputan Majlis</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <style>
-    body {
-      margin: 0;
-      padding-bottom: 80px; /* supaya kandungan tak terlindung oleh footer */
-      font-family: sans-serif;
-    }
-
-    section {
-      display: none;
-      padding: 50px 20px;
-      min-height: 80vh;
-    }
-
-    section.active {
-      display: block;
-    }
-
-    footer {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: #f0f0f0;
-      border-top: 1px solid #ccc;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      padding: 10px 0;
-      z-index: 1000;
-      font-size: 14px;
-    }
-
-    footer a {
-      text-decoration: none;
-      color: #333;
-      text-align: center;
-    }
-
-    footer a:hover {
-      color: #007BFF;
-    }
-
-    footer i {
-      display: block;
-      font-size: 18px;
-      margin-bottom: 3px;
-    }
-
-    h2 {
-      color: #333;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- SECTION: RSVP -->
-  <section id="rsvp" class="active">
-    <h2>RSVP</h2>
-    <p>Sila isi borang kehadiran anda:</p>
-    <a href="https://forms.gle/yourformlink" target="_blank">Borang RSVP</a>
-  </section>
-
-  <!-- SECTION: Money Gift -->
-  <section id="moneygift">
-    <h2>Money Gift</h2>
-    <p>Bank: Maybank<br>No Akaun: 1234567890<br>Nama: Ahmad & Aisyah</p>
-  </section>
-
-  <!-- SECTION: Wishlist -->
-  <section id="wishlist">
-    <h2>Wishlist</h2>
-    <ul>
-      <li>Set Periuk</li>
-      <li>Baucar IKEA</li>
-      <li>Set Pinggan Mangkuk</li>
-    </ul>
-  </section>
-
-  <!-- SECTION: Contact -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p><i class="fas fa-phone-alt"></i> <a href="tel:+60123456789">+60 12-345 6789</a></p>
-    <p><i class="fas fa-envelope"></i> <a href="mailto:jemputan@email.com">jemputan@email.com</a></p>
-  </section>
-
-  <!-- SECTION: Location -->
-  <section id="location">
-    <h2>Location</h2>
-    <p>Majlis diadakan di Dewan Majlis Contoh, Kuala Lumpur.</p>
-    <a href="https://maps.google.com" target="_blank">Lihat Lokasi di Google Maps</a>
-  </section>
-
-  <!-- FOOTER (Sticky with Navigation Icons) -->
-  <footer>
-    <a href="#" onclick="showSection('rsvp')">
-      <i class="fas fa-clipboard-check"></i>RSVP
-    </a>
-    <a href="#" onclick="showSection('moneygift')">
-      <i class="fas fa-money-bill-wave"></i>Gift
-    </a>
-    <a href="#" onclick="showSection('wishlist')">
-      <i class="fas fa-gift"></i>Wishlist
-    </a>
-    <a href="#" onclick="showSection('contact')">
-      <i class="fas fa-phone-alt"></i>Contact
-    </a>
-    <a href="#" onclick="showSection('location')">
-      <i class="fas fa-map-marker-alt"></i>Location
-    </a>
-  </footer>
-
-  <!-- SCRIPT: Tunjuk/Sembunyi Section -->
-  <script>
-    function showSection(id) {
-      const sections = document.querySelectorAll('section');
-      sections.forEach(section => {
-        section.classList.remove('active');
-      });
-      const target = document.getElementById(id);
-      if (target) {
-        target.classList.add('active');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    }
-  </script>
-
-</body>
-</html>
