@@ -1,139 +1,148 @@
-<!-- Tambah ini di bawah bahagian utama laman RSVP anda -->
-<div style="text-align: center; margin-top: 30px;">
-  <!-- Butang Call -->
-  <a href="tel:+60198813267" class="btn">Call</a>
-
-  <!-- Butang Lokasi (contoh: Google Maps) -->
-  <a href="https://maps.app.goo.gl/KYZcM4NcTKrCdBi78?g_st=aw" target="_blank" class="btn">Lokasi Majlis</a>
-
-  <!-- Butang RSVP -->
-  <a href="#rsvp-section" class="btn">RSVP</a>
-
-  <!-- Butang Ucapan -->
-  <a href="#ucapan-section" class="btn">Ucapan</a>
-</div>
-
-<!-- Gaya CSS ringkas untuk butang -->
-<style>
-  .btn {
-    display: inline-block;
-    margin: 10px;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 16px;
-  }
-  .btn:hover {
-    background-color: #45a049;
-  }
-</style>
-
-<div class="responsive">
-  <div class="gallery">
-    <a target="_blank" href="images/photo1.jpg">
-      <img src="images/photo1.jpg" alt="Gambar 1">
-    </a>
-    <div class="desc">Keterangan Gambar 1</div>
-  </div>
-</div>
-
-<div class="responsive">
-  <div class="gallery">
-    <a target="_blank" href="images/photo2.jpg">
-      <img src="images/photo2.jpg" alt="Gambar 2">
-    </a>
-    <div class="desc">Keterangan Gambar 2</div>
-  </div>
-</div>
-
-<!-- Tambahkan lebih banyak gambar mengikut keperluan -->
-
-<div class="clearfix"></div>
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ms">
 <head>
-  <meta charset="UTF-8">
-  <title>RSVP</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jemputan Majlis</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    .phone-button {
-      display: inline-flex;
+    body {
+      margin: 0;
+      padding-bottom: 80px;
+      font-family: sans-serif;
+      background-color: #fff;
+    }
+
+    section {
+      display: none;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      padding: 50px 20px;
+      min-height: 80vh;
+    }
+
+    section.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #f0f0f0;
+      border-top: 1px solid #ccc;
+      display: flex;
+      justify-content: space-around;
       align-items: center;
-      gap: 10px;
-      margin: 10px;
-      padding: 12px 24px;
-      font-size: 16px;
-      color: white;
-      background-color: #28a745;
-      border: none;
-      border-radius: 12px;
+      padding: 10px 0;
+      z-index: 1000;
+      font-size: 14px;
+    }
+
+    footer a {
       text-decoration: none;
-      transition: background-color 0.3s ease;
+      color: #333;
+      text-align: center;
     }
 
-    .phone-button:hover {
-      background-color: #218838;
+    footer a:hover {
+      color: #007BFF;
     }
 
-    .phone-icon {
+    footer i {
+      display: block;
       font-size: 18px;
+      margin-bottom: 3px;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    /* Extra for smoother transition (optional) */
+    .hidden {
+      display: none !important;
     }
   </style>
 </head>
 <body>
 
-  <h2>Contact</h2>
+  <!-- SECTION: RSVP -->
+  <section id="rsvp" class="active">
+    <h2>RSVP</h2>
+    <p>Sila isi borang kehadiran anda:</p>
+    <a href="https://forms.gle/yourformlink" target="_blank">Borang RSVP</a>
+  </section>
 
-  <!-- Tombol Telefon 1 -->
-  <a href="tel:+60198813267" class="phone-button">
-    <i class="fas fa-phone phone-icon"></i>
-    Nabilah
-  </a>
+  <!-- SECTION: Money Gift -->
+  <section id="moneygift">
+    <h2>Money Gift</h2>
+    <p>Bank: Maybank<br>No Akaun: 1234567890<br>Nama: Ahmad & Aisyah</p>
+  </section>
 
-  <!-- Tombol Telefon 2 -->
-  <a href="tel:+601157265723" class="phone-button">
-    <i class="fas fa-phone phone-icon"></i>
-    Atiqah
-  </a>
+  <!-- SECTION: Wishlist -->
+  <section id="wishlist">
+    <h2>Wishlist</h2>
+    <ul>
+      <li>Set Periuk</li>
+      <li>Baucar IKEA</li>
+      <li>Set Pinggan Mangkuk</li>
+    </ul>
+  </section>
+
+  <!-- SECTION: Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p><i class="fas fa-phone-alt"></i> <a href="tel:+60123456789">+60 12-345 6789</a></p>
+    <p><i class="fas fa-envelope"></i> <a href="mailto:jemputan@email.com">jemputan@email.com</a></p>
+  </section>
+
+  <!-- SECTION: Location -->
+  <section id="location">
+    <h2>Location</h2>
+    <p>Majlis diadakan di Dewan Majlis Contoh, Kuala Lumpur.</p>
+    <a href="https://maps.google.com" target="_blank">Lihat Lokasi di Google Maps</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="#" onclick="showSection('rsvp')">
+      <i class="fas fa-clipboard-check"></i>RSVP
+    </a>
+    <a href="#" onclick="showSection('moneygift')">
+      <i class="fas fa-money-bill-wave"></i>Gift
+    </a>
+    <a href="#" onclick="showSection('wishlist')">
+      <i class="fas fa-gift"></i>Wishlist
+    </a>
+    <a href="#" onclick="showSection('contact')">
+      <i class="fas fa-phone-alt"></i>Contact
+    </a>
+    <a href="#" onclick="showSection('location')">
+      <i class="fas fa-map-marker-alt"></i>Location
+    </a>
+  </footer>
+
+  <!-- SCRIPT: Animasi Section -->
+  <script>
+    function showSection(id) {
+      const allSections = document.querySelectorAll('section');
+
+      allSections.forEach(section => {
+        if (section.id === id) {
+          section.classList.add('active');
+        } else {
+          section.classList.remove('active');
+        }
+      });
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
 
 </body>
 </html>
-
-<!-- Font Awesome (letak dalam <head> jika belum ada) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<!-- Mobile Collapsible Footer -->
-<footer style="font-family: sans-serif; background-color: #f8f8f8; border-top: 1px solid #ddd;">
-  <details style="padding: 15px; text-align: center;">
-    <summary style="cursor: pointer; font-weight: bold; font-size: 16px;">
-      <i class="fas fa-bars"></i> Menu Pantas
-    </summary>
-
-    <div style="margin-top: 15px; display: flex; flex-direction: column; gap: 10px;">
-      <a href="#rsvp" style="text-decoration: none; color: #333;">
-        <i class="fas fa-clipboard-check"></i> RSVP
-      </a>
-
-      <a href="#moneygift" style="text-decoration: none; color: #333;">
-        <i class="fas fa-money-bill-wave"></i> Money Gift
-      </a>
-
-      <a href="#wishlist" style="text-decoration: none; color: #333;">
-        <i class="fas fa-gift"></i> Wishlist
-      </a>
-
-      <a href="#contact" style="text-decoration: none; color: #333;">
-        <i class="fas fa-phone-alt"></i> Contact
-      </a>
-
-      <a href="#location" style="text-decoration: none; color: #333;">
-        <i class="fas fa-map-marker-alt"></i> Location
-      </a>
-    </div>
-
-    <p style="margin-top: 20px; font-size: 13px; color: #777;">&copy; 2025 Ahmad & Aisyah Wedding</p>
-  </details>
-</footer>
