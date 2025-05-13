@@ -418,24 +418,18 @@ function showContact() {
   <style>
     body {
       margin: 0;
-      padding-bottom: 80px;
+      padding-bottom: 80px; /* supaya kandungan tak terlindung oleh footer */
       font-family: sans-serif;
-      background-color: #fff;
     }
 
     section {
       display: none;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
       padding: 50px 20px;
       min-height: 80vh;
     }
 
     section.active {
       display: block;
-      opacity: 1;
-      transform: translateY(0);
     }
 
     footer {
@@ -471,11 +465,6 @@ function showContact() {
 
     h2 {
       color: #333;
-    }
-
-    /* Extra for smoother transition (optional) */
-    .hidden {
-      display: none !important;
     }
   </style>
 </head>
@@ -518,7 +507,7 @@ function showContact() {
     <a href="https://maps.google.com" target="_blank">Lihat Lokasi di Google Maps</a>
   </section>
 
-  <!-- FOOTER -->
+  <!-- FOOTER (Sticky with Navigation Icons) -->
   <footer>
     <a href="#" onclick="showSection('rsvp')">
       <i class="fas fa-clipboard-check"></i>RSVP
@@ -537,20 +526,18 @@ function showContact() {
     </a>
   </footer>
 
-  <!-- SCRIPT: Animasi Section -->
+  <!-- SCRIPT: Tunjuk/Sembunyi Section -->
   <script>
     function showSection(id) {
-      const allSections = document.querySelectorAll('section');
-
-      allSections.forEach(section => {
-        if (section.id === id) {
-          section.classList.add('active');
-        } else {
-          section.classList.remove('active');
-        }
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => {
+        section.classList.remove('active');
       });
-
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      const target = document.getElementById(id);
+      if (target) {
+        target.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     }
   </script>
 
