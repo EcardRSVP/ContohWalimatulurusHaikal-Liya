@@ -318,11 +318,67 @@ function showContact() {
   <!-- Seksyen Wishlist -->
   <section id="wishlist">
     <h2>Wishlist</h2>
-    <p>Jika anda ingin memberi hadiah, berikut adalah senarai keinginan kami:</p>
-    <ul>
-      <li>Periuk Nasi Elektrik</li>
-      <li>Set Tupperware</li>
-      <li>Baucar IKEA</li>
+    <div id="wishlist"></div>
+
+<script>
+  const wishlist = [
+    {
+      name: "Wireless Earbuds",
+      link: "https://shopee.com.my/product/123456789/987654321",
+      image: "https://cf.shopee.com.my/file/item-image.jpg",
+      receiverName: "Ali Bin Abu",
+      address: "No 123, Jalan Mawar, 43000 Kajang, Selangor",
+      phone: "012-3456789",
+      purchasedFrom: "Shopee - Kedai Techno"
+    },
+    {
+      name: "Laptop Stand",
+      link: "https://shopee.com.my/product/223344556/667788990",
+      image: "https://cf.shopee.com.my/file/laptop-stand.jpg",
+      receiverName: "Nur Aisyah",
+      address: "Lot 45, Kampung Baru, 21000 Kuala Terengganu",
+      phone: "013-8765432",
+      purchasedFrom: "Shopee - GadgetPro"
+    }
+  ];
+
+  const wishlistContainer = document.getElementById("wishlist");
+
+  wishlist.forEach((item, index) => {
+    const itemId = `copy-info-${index}`;
+    const itemInfo = `
+      Item: ${item.name}
+Dari: ${item.purchasedFrom}
+Penerima: ${item.receiverName}
+Alamat: ${item.address}
+No. Telefon: ${item.phone}
+Link: ${item.link}
+    `;
+
+    const itemHTML = `
+      <div style="border:1px solid #ccc; padding:10px; margin:10px;">
+        <img src="${item.image}" alt="${item.name}" style="width:100px;"><br>
+        <strong><a href="${item.link}" target="_blank">${item.name}</a></strong><br>
+        <p><b>Dari:</b> ${item.purchasedFrom}</p>
+        <p><b>Penerima:</b> ${item.receiverName}</p>
+        <p><b>Alamat:</b> ${item.address}</p>
+        <p><b>No. Telefon:</b> ${item.phone}</p>
+        <textarea id="${itemId}" style="display:none;">${itemInfo}</textarea>
+        <button onclick="copyInfo('${itemId}')">Salin Maklumat</button>
+      </div>
+    `;
+    wishlistContainer.innerHTML += itemHTML;
+  });
+
+  function copyInfo(textareaId) {
+    const textarea = document.getElementById(textareaId);
+    textarea.style.display = "block";
+    textarea.select();
+    document.execCommand("copy");
+    textarea.style.display = "none";
+    alert("Maklumat telah disalin!");
+  }
+</script>
     </ul>
   </section>
 
