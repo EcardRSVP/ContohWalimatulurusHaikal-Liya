@@ -413,12 +413,148 @@ Link: ${item.link}
 </html>
 
         
-    <!-- Footer -->
-    <footer class="page">
-      <p>Semoga dengan kehadiran para hadirin akan menyerikan lagi majlis ini</p>
-      <div id="footer-countdown"></div>
-    </footer>
 
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wishlist Hadiah Kahwin</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      padding: 20px;
+    }
+    .gift-item {
+      background: #ffffff;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+    }
+    .gift-item img {
+      width: 80px;
+      height: auto;
+      margin-right: 15px;
+      border-radius: 5px;
+    }
+    .gift-info {
+      flex: 1;
+    }
+    .gift-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .btn {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 6px;
+      margin-right: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .btn-tempah {
+      background-color: #007bff;
+      color: white;
+    }
+    .btn-telah {
+      background-color: #28a745;
+      color: white;
+      cursor: default;
+    }
+    .btn-link {
+      background-color: #6c757d;
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Wishlist Perkahwinan</h2>
+
+ <div class="gift-item">
+    <img src="https://via.placeholder.com/80" alt="Set Cadar">
+    <div class="gift-info">
+      <div class="gift-title">Set Cadar</div>
+      <a href="https://s.shopee.com.my/7fNH3P2qHp" class="btn btn-link" target="_blank">🔗 Link Item</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+  <div class="gift-item">
+    <img src="https://via.placeholder.com/80" alt="Iron">
+    <div class="gift-info">
+      <div class="gift-title">Philips Steam Iron</div>
+      <a href="https://shopee.com" class="btn btn-link" target="_blank">🔗 Link Item</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+  <div class="gift-item">
+    <img src="https://via.placeholder.com/80" alt="Blender">
+    <div class="gift-info">
+      <div class="gift-title">Tefal Blender BL2B01</div>
+      <a href="https://shopee.com" class="btn btn-link" target="_blank">🔗 Link Item</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+  <script>
+    function tempah(button) {
+      button.innerText = '✔ Telah Ditempah';
+      button.classList.remove('btn-tempah');
+      button.classList.add('btn-telah');
+      button.disabled = true;
+    }
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+    
   </div>
  
   <script>
