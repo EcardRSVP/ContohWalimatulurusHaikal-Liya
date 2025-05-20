@@ -159,5 +159,5 @@ button {
 
 /* Pastikan kandungan tak ditindih footer */
 body {
-  padding-bottom: 80px;
+  padding-bottom: 100px; /* untuk beri ruang di bawah */
 }
