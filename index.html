@@ -788,6 +788,24 @@
   <a href="https://waze.com/ul/hw28jjnfyr" target="_blank">Waze</a>
 </section>
 
+  <!-- Footer Sticky -->
+  <div class="footer">
+    <div class="footer-icon rsvp" onclick="toggleSection('Seksyen RSVP')">
+      💌 <span>RSVP</span>
+    </div>
+    <div class="footer-icon money" onclick="toggleSection('Seksyen Money Gift')">
+      💸 <span>Money Gift</span>
+    </div>
+    <div class="footer-icon wishlist" onclick="toggleSection('Seksyen Wishlist')">
+      🎁 <span>Wishlist</span>
+    </div>
+    <div class="footer-icon contact" onclick="toggleSection('Seksyen Contact')">
+      📞 <span>Contact</span>
+    </div>
+    <div class="footer-icon location" onclick="toggleSection('Seksyen Location')">
+      📍 <span>Location</span>
+    </div>
+  </div>
 
 <!-- ✅ JavaScript -->
 <script>
@@ -890,7 +908,7 @@
         const cols = line.split(",");
         const nama = cols[0]?.replaceAll('"', '') || '';
         const tracking = cols[1]?.replaceAll('"', '') || '';
-        const link = tracking ? `<a href="https://easyparcel.com/my/en/track/?tracking_number=${tracking}" target="_blank">Track</a>` : '-';
+        const link = tracking ? <a href="https://easyparcel.com/my/en/track/?tracking_number=${tracking}" target="_blank">Track</a> : '-';
 
         const tr = document.createElement("tr");
         tr.innerHTML = `
@@ -942,24 +960,7 @@
 
 
 
-  <!-- Footer Sticky -->
-  <div class="footer">
-    <div class="footer-icon rsvp" onclick="toggleSection('Seksyen RSVP')">
-      💌 <span>RSVP</span>
-    </div>
-    <div class="footer-icon money" onclick="toggleSection('Seksyen Money Gift')">
-      💸 <span>Money Gift</span>
-    </div>
-    <div class="footer-icon wishlist" onclick="toggleSection('Seksyen Wishlist')">
-      🎁 <span>Wishlist</span>
-    </div>
-    <div class="footer-icon contact" onclick="toggleSection('Seksyen Contact')">
-      📞 <span>Contact</span>
-    </div>
-    <div class="footer-icon location" onclick="toggleSection('Seksyen Location')">
-      📍 <span>Location</span>
-    </div>
-  </div>
+
 
 
 
@@ -970,7 +971,7 @@
 
 
   
-  
+  </div>
  
   <script>
     const startBtn = document.getElementById('start-btn');
