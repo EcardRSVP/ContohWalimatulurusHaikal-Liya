@@ -10,7 +10,7 @@
 
   <!-- Background Music -->
   <audio id="bg-music" loop>
-    <source src="Hafiz Suip - Kisah Cinta Kita (Lyrics).mp3" type="audio/mpeg"/>
+    <source src="Hafiz Suip - Kisah Cinta Kita (Lyrics) (1).mp3" type="audio/mpeg"/>
   </audio>
 
   <div class="flipbook">
@@ -19,10 +19,13 @@
     <section class="page front-page">
       <h1>WALIMATULURUS</h1>
       <h2>Haikal</h2>
-      </h3>&</h3>
-      </h4>Liya</h4>
+      <p>&<p>
+      <h2>Liya</h2>
       <button id="start-btn">Buka</button>
     </section>
+
+
+
 
     <!-- Page 2 -->
     <section class="page">
@@ -37,71 +40,251 @@
       <p>dengan pilihan hatinya</p>
        <p><strong>Nurul Ilyana Binti Ilyas</strong>
     </section>
+    
 
+
+    
     <!-- Page 3 -->
-    <section class="page">
-      <h2>Butiran Majlis</h2>
-      <p><strong>Tarikh:</strong>
-        11 November 2025</p>
-      <p><strong>Masa:</strong> 11:00 pagi - 4:00 petang</p>
-      <p><strong>Lokasi:</strong> Dewan Seri Melati, Shah Alam</p>
-    </section>
+<section class="page">
+      <p><strong>PADA</strong><br>
+        Rabu, 31 Disember 2025<br>
+        Bersamaan 10 Rejab 1447H
+       </p>
 
-    <!-- Page 3 -->
-    <section class="page">
-      <p><strong>PADA</strong>
-        Sabtu, 31 Mei 2025</p>
-        Bersamaan 3 Zulhijjah 1446H</p>
-
-      <p><strong>BERTEMPAT DI</strong>
-      Masjid Jamek Tanjong Malim</p>
+      <p><strong>BERTEMPAT DI</strong><br>
+    Dewan Bandar Behrang 2020<br>
+    Bandar Behrang 2020<br>
+    35900 Tanjong Malim, Perak
+    </p>
         
-      <p><strong>ATURCARA MAJLIS</strong>
-      <p><strong>Jamuan Makan:</strong> 11.00 am - 5.00 pm</p>
-      <p><strong>Ketibaan Pengantin:</strong> 1.00 pm</p>
+      <p><strong>ATURCARA MAJLIS</strong><br>
+      <strong>Jamuan Makan:</strong>11.00 am - 5.00 pm<br>
+      <strong>Ketibaan Pengantin:</strong>
+       1.00 pm</p>
+    </div>
     </section>
 
+
+
+   
     <!-- Page 4 -->
     <section class="page">
-      <h2>Pasangan Pengantin</h2>
-      <img src="pasangan.jpeg" alt="Pasangan Pengantin" class="pasangan-img">
-    </section>
-
-    <!-- Page 5 -->
-    <section class="page">
-      <div class="card">
-        <h2>Money Gift</h2>
-     <p><strong>Nama Bank :</strong> Maybank Berhad</p>
-     <p><strong>Nama :</strong> Muhammad Haikal Bin Zulkefli</p>
-     <p>Nombor Akaun: <span id="rek">1234567890</span></p>
-      <button onclick="copyRek()">Copy</button>
-        <p>Imbas kod QR di bawah</p>
-        <img src="qr-code.jpeg" alt="Kod QR">
-
-          <script>
-    function copyRek() {
-      const text = document.getElementById("rek").innerText;
-      navigator.clipboard.writeText(text).then(() => {
-        alert("Nombor akaun bank telah disalin");
-      });
-    }
-  </script>
-</body>
-</html>
-      </div>
-    </section>
-
-    <!-- Page 6 -->
-    <section class="page">
       <h2>Ucapan</h2>
-        <textarea placeholder="Ucapan anda" rows="4"></textarea>
+      <input type="text" placeholder="Ucapan anda" required>
+      <label>
         <button type="submit">Hantar</button>
       </form>
     </section>
 
-    <!-- Page 8 -->
-    <section class="page">
-      <h2>RSVP</h2>
+
+
+
+   <!-- Page 5 -->
+   <section class="page">
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menanti Hari Bahagia</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fffafc;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #c2185b;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .countdown div {
+      background: white;
+      padding: 15px;
+      border-radius: 12px;
+      min-width: 60px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    .countdown span {
+      font-size: 1.5rem;
+      color: #c2185b;
+      font-weight: bold;
+    }
+
+    .label {
+      font-size: 0.8rem;
+      margin-top: 4px;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 0.85rem;
+      color: #888;
+    }
+
+    @media (min-width: 480px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      .countdown div {
+        min-width: 80px;
+      }
+
+      .countdown span {
+        font-size: 2rem;
+      }
+
+      .label {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Menanti Hari Bahagia</h1>
+
+  <div class="countdown">
+    <div>
+      <span id="days">0</span>
+      <div class="label">Hari</div>
+    </div>
+    <div>
+      <span id="hours">0</span>
+      <div class="label">Jam</div>
+    </div>
+    <div>
+      <span id="minutes">0</span>
+      <div class="label">Minit</div>
+    </div>
+    <div>
+      <span id="seconds">0</span>
+      <div class="label">Saat</div>
+    </div>
+
+      <p>#liyaterciptauntukhaikal</p>
+  </div>
+
+
+  <script>
+    const weddingDate = new Date("2025-12-31T11:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      if (distance < 0) {
+        document.querySelector(".countdown").innerHTML = "Majlis telah berlangsung!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").textContent = days;
+      document.getElementById("hours").textContent = hours;
+      document.getElementById("minutes").textContent = minutes;
+      document.getElementById("seconds").textContent = seconds;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+
+</body>
+</html>
+  </section>
+
+
+
+  
+    <!-- Page 6 -->
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Footer Scroll Section</title>
+  <style>
+    body {
+      margin: 0;
+      padding-bottom: 80px;
+      font-family: sans-serif;
+      scroll-behavior: smooth; /* smooth scroll effect */
+    }
+
+    section {
+      padding: 60px 20px;
+      border-bottom: 1px solid #ccc;
+      min-height: 300px;
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background-color: #ffffff;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      box-shadow: 0 -1px 5px rgba(0,0,0,0.1);
+      border-top: 1px solid #ddd;
+      z-index: 1000;
+    }
+
+    .footer-icon {
+      text-align: center;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .footer-icon span {
+      display: block;
+      font-size: 11px;
+    }
+
+    /* Warna ikon */
+    .rsvp { color: #e91e63; }
+    .money { color: #4caf50; }
+    .contact { color: #ff9800; }
+    .wishlist { color: #9c27b0; }
+    .location { color: #03a9f4; }
+    .calendar { color: #607d8b; }
+  </style>
+</head>
+<body>
+
+  <!-- Seksyen-seksyen -->
+    <section id="Seksyen RSVP" class="active">
+    <h2>💌 RSVP</h2>
       <form>
         <input type="text" placeholder="Nama Anda" required>
             <label>
@@ -119,306 +302,73 @@
       </form>
     </section>
 
-    <!-- Page 9 -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>RSVP</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    .phone-button {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin: 10px;
-      padding: 12px 24px;
-      font-size: 16px;
-      color: white;
-      background-color: #28a745;
-      border: none;
-      border-radius: 12px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
+
+
+
+  <section id="Seksyen Money Gift">
+    <h2>💸 Money Gift</h2>
+     <p><strong>Nama Bank :</strong> Maybank Berhad</p>
+     <p><strong>Nama :</strong> Muhammad Haikal Bin Zulkefli</p>
+     <p><strong>Nombor Akaun:</strong> <span id="rek">1234567890</span></p>
+      <button onclick="copyRek()">Copy</button>
+        <p>Imbas kod QR</p>
+        <img src="Contoh QR.jpg" alt="Kod QR">
+
+          <script>
+    function copyRek() {
+      const text = document.getElementById("rek").innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Nombor akaun bank telah disalin");
+      });
     }
-
-    .phone-button:hover {
-      background-color: #218838;
-    }
-
-    .phone-icon {
-      font-size: 18px;
-    }
-  </style>
-</head>
-<body>
-
-  <h2>Contact</h2>
-
-  <!-- Button untuk Contact -->
-<button onclick="showContact()">Contact</button>
-
-  <!-- Tombol Telefon 1 -->
-  <a href="tel:+60198813267" class="phone-button">
-    <i class="fas fa-phone phone-icon"></i>
-    Nabilah
-  </a>
-
-  <!-- Tombol Telefon 2 -->
-  <a href="tel:+601157265723" class="phone-button">
-    <i class="fas fa-phone phone-icon"></i>
-    Atiqah
-  </a>
-
+  </script>
 </body>
 </html>
-        <!-- Tambah ini di bawah bahagian utama laman RSVP anda -->
-<div style="text-align: center; margin-top: 30px;">
-  <!-- Butang Call -->
-  <a href="tel:+60198813267" class="btn">Contact</a>
-
-  <!-- Butang Lokasi (contoh: Google Maps) -->
-  <a href="https://maps.app.goo.gl/KYZcM4NcTKrCdBi78?g_st=aw" target="_blank" class="btn">Lokasi Majlis</a>
-
-  <!-- Butang RSVP -->
-  <a href="#rsvp-section" class="btn">RSVP</a>
-
-  <!-- Butang Ucapan -->
-  <a href="#ucapan-section" class="btn">Ucapan</a>
-</div>
-
-<!-- Gaya CSS ringkas untuk butang -->
-<style>
-  .btn {
-    display: inline-block;
-    margin: 10px;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 16px;
-  }
-  .btn:hover {
-    background-color: #45a049;
-  }
-</style>
-
-        
-<!-- Button untuk Contact -->
-<button onclick="showContact()">Contact</button>
-
-<!-- Senarai nombor telefon tersembunyi -->
-<div id="contact-info" style="display: none; margin-top: 10px;">
-  <p><strong>Phone 1:</strong> <a href="tel:+60198813267">+60 19-8813267</a></p>
-  <p><strong>Phone 2:</strong> <a href="tel:+601157265723">+60 11-57265723</a></p>
-</div>
-
-<script>
-function showContact() {
-  var contactDiv = document.getElementById("contact-info");
-  if (contactDiv.style.display === "none") {
-    contactDiv.style.display = "block";
-  } else {
-    contactDiv.style.display = "none";
-  }
-}
-</script>
-
- <!-- Page 10 -->
-        <!DOCTYPE html>
-<html lang="ms">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jemputan Majlis</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav {
-      background: #f5f5f5;
-      padding: 10px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-    }
-
-    section {
-      padding: 60px 20px;
-      border-bottom: 1px solid #ddd;
-    }
-
-    h2 {
-      color: #444;
-    }
-
-    footer {
-      padding: 30px 20px;
-      text-align: center;
-      background-color: #f0f0f0;
-    }
-
-    a.button {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 20px;
-      background: #007BFF;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-
-    a.button:hover {
-      background: #0056b3;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Menu Navigasi -->
-  <nav>
-    <a href="#rsvp">RSVP</a>
-    <a href="#moneygift">Money Gift</a>
-    <a href="#wishlist">Wishlist</a>
-    <a href="#contact">Contact</a>
-    <a href="#location">Location</a>
-  </nav>
-
-  <!-- Seksyen RSVP -->
-  <section id="rsvp">
-    <h2>RSVP</h2>
-    <p>Sila sahkan kehadiran anda melalui borang di bawah:</p>
-    <a class="button" href="https://forms.gle/wZ5qbCTw4FN3oXTx9" target="_blank">Isi Borang RSVP</a>
-  </section>
-
-  <!-- Seksyen Money Gift -->
-  <section id="moneygift">
-    <h2>Money Gift</h2>
-    <p>Jika ingin memberi sumbangan secara online:</p>
-    <ul>
-      <li>Bank: Maybank</li>
-      <li>Nama: Ahmad & Aisyah</li>
-      <li>No Akaun: 1234 5678 9012</li>
-    </ul>
-  </section>
-
-  <!-- Seksyen Wishlist -->
-  <section id="wishlist">
-    <h2>Wishlist</h2>
-    <div id="wishlist"></div>
-
-<script>
-  const wishlist = [
-    {
-      name: "Wireless Earbuds",
-      link: "https://shopee.com.my/product/123456789/987654321",
-      image: "https://cf.shopee.com.my/file/item-image.jpg",
-      receiverName: "Ali Bin Abu",
-      address: "No 123, Jalan Mawar, 43000 Kajang, Selangor",
-      phone: "012-3456789",
-      purchasedFrom: "Shopee - Kedai Techno"
-    },
-    {
-      name: "Laptop Stand",
-      link: "https://shopee.com.my/product/223344556/667788990",
-      image: "https://cf.shopee.com.my/file/laptop-stand.jpg",
-      receiverName: "Nur Aisyah",
-      address: "Lot 45, Kampung Baru, 21000 Kuala Terengganu",
-      phone: "013-8765432",
-      purchasedFrom: "Shopee - GadgetPro"
-    }
-  ];
-
-  const wishlistContainer = document.getElementById("wishlist");
-
-  wishlist.forEach((item, index) => {
-    const itemId = `copy-info-${index}`;
-    const itemInfo = `
-      Item: ${item.name}
-Dari: ${item.purchasedFrom}
-Penerima: ${item.receiverName}
-Alamat: ${item.address}
-No. Telefon: ${item.phone}
-Link: ${item.link}
-    `;
-
-    const itemHTML = `
-      <div style="border:1px solid #ccc; padding:10px; margin:10px;">
-        <img src="${item.image}" alt="${item.name}" style="width:100px;"><br>
-        <strong><a href="${item.link}" target="_blank">${item.name}</a></strong><br>
-        <p><b>Dari:</b> ${item.purchasedFrom}</p>
-        <p><b>Penerima:</b> ${item.receiverName}</p>
-        <p><b>Alamat:</b> ${item.address}</p>
-        <p><b>No. Telefon:</b> ${item.phone}</p>
-        <textarea id="${itemId}" style="display:none;">${itemInfo}</textarea>
-        <button onclick="copyInfo('${itemId}')">Salin Maklumat</button>
       </div>
-    `;
-    wishlistContainer.innerHTML += itemHTML;
-  });
+    </section>
 
-  function copyInfo(textareaId) {
-    const textarea = document.getElementById(textareaId);
-    textarea.style.display = "block";
-    textarea.select();
-    document.execCommand("copy");
-    textarea.style.display = "none";
-    alert("Maklumat telah disalin!");
+
+
+  
+  <section id="Seksyen Wishlist">
+    <h2>🎁 Wishlist</h2>
+<div style="text-align: center;">
+ 
+
+  <p><strong>Nama Penerima</strong>
+  <div style="background-color: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 10px;">
+    <span id="nama">Muhammad Haikal Bin Zulkefli</span>
+    <button onclick="copyText('nama')" style="margin-left:10px;">Copy</button>
+  </div>
+
+  <p><strong>Alamat Penghantaran</strong>
+  <div style="background-color: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 10px;">
+    <span id="alamat">
+     No xx, Jalan xx, Taman xx, 35900 Tanjong Malim, Perak
+    </span>
+    <button onclick="copyText('alamat')" style="margin-left:10px;">Copy</button>
+  </div>
+
+  <p><strong>Nombor Telefon</strong>
+  <div style="background-color: #f8f9fa; padding: 10px; border-radius: 8px;">
+    <span id="telefon">0134567890</span>
+    <button onclick="copyText('telefon')" style="margin-left:10px;">Copy</button>
+  </div>
+</div>
+
+<script>
+  function copyText(id) {
+    const text = document.getElementById(id).innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      alert("Disalin: " + text);
+    });
   }
 </script>
-    </ul>
-  </section>
-
-  <!-- Seksyen Contact -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>
-      <i class="fas fa-phone-alt"></i> <a href="tel:+60198813267">+6019-8813267</a><br>
-      <i class="fas fa-phone-alt"></i> <a href="tel:+601157265723">+6011-57265723</a><br>
-      <i class="fas fa-envelope"></i> <a href="mailto:ahmadaisyah@email.com">ahmadaisyah@email.com</a>
-    </p>
-  </section>
-
-  <!-- Seksyen Location -->
-  <section id="location">
-    <h2>Location</h2>
-    <p>Majlis akan diadakan di:</p>
-    <p>
-      Dewan Majlis Contoh, Kuala Lumpur<br>
-      <a class="button" href="https://maps.app.goo.gl/KYZcM4NcTKrCdBi78?g_st=aw" target="_blank">Lihat di Google Maps</a>
-    </p>
-          <a class="button" href="https://waze.com/ul/hw28jjnfyr" target="_blank">Lihat di Waze</a>
-    </p>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>Semoga dengan kehadiran para hadirin akan menyerikan lagi majlis ini</p>
-  </footer>
-
-</body>
-</html>
-
-        
+    <br><br><br>
 
 
 
-
-
-
+    
 <!DOCTYPE html>
 <html lang="ms">
 <head>
@@ -479,34 +429,501 @@ Link: ${item.link}
 </head>
 <body>
 
-  <h2>Wishlist Perkahwinan</h2>
-
  <div class="gift-item">
-    <img src="WhatsApp Image 2025-05-17 at 11.20.19 PM.jpeg" alt="Set Cadar">
+    <img src="Microwave Oven.jpg" alt="Microwave Oven">
     <div class="gift-info">
-      <div class="gift-title">Set Cadar</div>
-      <a href="https://s.shopee.com.my/7fNH3P2qHp" class="btn btn-link" target="_blank">🔗 Link Item Shopee</a>
+      <div class="gift-title">Microwave Oven</div>
+      <a href="https://s.shopee.com.my/Vu5yuSFl9" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
       <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
     </div>
   </div>
 
   <div class="gift-item">
-    <img src="https://via.placeholder.com/80" alt="Iron">
+    <img src="Kipas Kaki.jpg" alt="Kipas Kaki">
     <div class="gift-info">
-      <div class="gift-title">Philips Steam Iron</div>
-      <a href="https://shopee.com" class="btn btn-link" target="_blank">🔗 Link Item</a>
+      <div class="gift-title">Kipas Kaki</div>
+      <a href="https://s.shopee.com.my/5fcC7l7DCM" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
       <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
     </div>
   </div>
 
   <div class="gift-item">
-    <img src="https://via.placeholder.com/80" alt="Blender">
+    <img src="Peti Ais.jpg" alt="Peti Ais">
     <div class="gift-info">
-      <div class="gift-title">Tefal Blender BL2B01</div>
-      <a href="https://shopee.com" class="btn btn-link" target="_blank">🔗 Link Item</a>
+      <div class="gift-title">Peti Ais</div>
+      <a href="https://shopee.com.my/CHiQ-Fridge-2-Door-Top-Freezer-Refrigerator-(166L)-CTM138L-Peti-Sejuk-%E7%94%B5%E5%86%B0%E7%AE%B1-i.17616092.25664786998?sp_atk=ce2d85f1-ae78-4ab9-b5a0-11fa4c852bd5&xptdk=ce2d85f1-ae78-4ab9-b5a0-11fa4c852bd5" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
       <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
     </div>
   </div>
+
+  <div class="gift-item">
+    <img src="Mesin Basuh Auto.jpg" alt="Mesin Basuh Auto">
+    <div class="gift-info">
+      <div class="gift-title">Mesin Basuh Auto</div>
+      <a href="https://s.shopee.com.my/5fcC7ZBqwi" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+  <div class="gift-item">
+    <img src="toaster.jpeg" alt="Toaster">
+    <div class="gift-info">
+      <div class="gift-title">Toaster</div>
+      <a href="https://s.shopee.com.my/1qPYkyp9uB?share_channel_code=1" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+<div class="gift-item">
+    <img src="Lampu Tidur.jpeg" alt="Lampu Tidur">
+    <div class="gift-info">
+      <div class="gift-title">Lampu Tidur</div>
+      <a href="https://s.shopee.com.my/6KrtSt4n4s" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+<div class="gift-item">
+    <img src="Air Purifier.jpeg" alt="Air Purifier">
+    <div class="gift-info">
+      <div class="gift-title">Air Purifier</div>
+      <a href="https://s.shopee.com.my/AKO2Dh39xQ" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+<div class="gift-item">
+    <img src="Rice Cooker Multifunction.jpg" alt="Rice Cooker Multifunction">
+    <div class="gift-info">
+      <div class="gift-title">Rice Cooker Multifunction</div>
+      <a href="https://s.shopee.com.my/20itxj2FNI" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+  <div class="gift-item">
+    <img src="Iron.jpeg" alt="Iron">
+    <div class="gift-info">
+      <div class="gift-title">Iron</div>
+      <a href="https://s.shopee.com.my/9pRlbx7vbJ" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+  <div class="gift-item">
+    <img src="Blender.jpg" alt="Blender">
+    <div class="gift-info">
+      <div class="gift-title">Blender</div>
+      <a href="https://s.shopee.com.my/AKO1szp7xM" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+  
+  <div class="gift-item">
+    <img src="Water Dispenser.jpg" alt="Water Dispenser">
+    <div class="gift-info">
+      <div class="gift-title">Water Dispenser</div>
+      <a href="https://s.shopee.com.my/6po9iOW7nk" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+  
+  <div class="gift-item">
+    <img src="Chopper,Mini Blender.jpg" alt="Chopper/Mini Blender">
+    <div class="gift-info">
+      <div class="gift-title">Chopper/Mini Blender</div>
+      <a href="https://s.shopee.com.my/2B2JyCAkls" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+  <div class="gift-item">
+    <img src="Hair Dryer.jpg" alt="Hair Dryer">
+    <div class="gift-info">
+      <div class="gift-title">Hair Dryer</div>
+      <a href="https://s.shopee.com.my/Vu5yuSFl9" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+    <div class="gift-item">
+    <img src="Electric Kettle.jpg" alt="Electric Kettle">
+    <div class="gift-info">
+      <div class="gift-title">Electric Kettle</div>
+      <a href="https://s.shopee.com.my/2qI0jWqVqj" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>   
+
+    <div class="gift-item">
+    <img src="Television.jpg" alt="Television">
+    <div class="gift-info">
+      <div class="gift-title">Television</div>
+      <a href="https://s.shopee.com.my/8zse4fGYnJ" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>   
+
+    <div class="gift-item">
+    <img src="Vacuum.jpg" alt="Vacuum">
+    <div class="gift-info">
+      <div class="gift-title">Vacuum</div>
+      <a href="https://s.shopee.com.my/8zse2td8KL" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>   
+
+      <div class="gift-item">
+    <img src="Air Fryer.jpg" alt="Air Fryer">
+    <div class="gift-info">
+      <div class="gift-title">Air Fryer</div>
+      <a href="https://s.shopee.com.my/9UoubFzn7a" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>   
+
+      <div class="gift-item">
+    <img src="Induction Cooker(Dapur Masak Elektrik).jpg" alt="Induction Cooker(Dapur Masak Elektrik)">
+    <div class="gift-info">
+      <div class="gift-title">Induction Cooker(Dapur Masak Elektrik)</div>
+      <a href="https://s.shopee.com.my/7fNGUISLZx" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>   
+
+      <div class="gift-item">
+    <img src="Dapur Gas.jpg" alt="Dapur Gas">
+    <div class="gift-info">
+      <div class="gift-title">Dapur Gas</div>
+      <a href="https://s.shopee.com.my/8KcxFncRK4" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>   
+
+  <div class="gift-item">
+    <img src="Toto.jpg" alt="Toto">
+    <div class="gift-info">
+      <div class="gift-title">Toto</div>
+      <a href="https://s.shopee.com.my/4fjes70l0R" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+    <div class="gift-item">
+    <img src="Cermin.jpg" alt="Cermin">
+    <div class="gift-info">
+      <div class="gift-title">Cermin</div>
+      <a href="https://s.shopee.com.my/3Aur3qcs0u" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+  
+<div class="gift-item">
+    <img src="Bekas Minyak Masak.jpeg" alt="Bekas Minyak Masak">
+    <div class="gift-info">
+      <div class="gift-title">Bekas Minyak Masak</div>
+      <a href="https://s.shopee.com.my/1g63uWc49o" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+<div class="gift-item">
+    <img src="Bantal Couple.jpeg" alt="Bantal Couple">
+    <div class="gift-info">
+      <div class="gift-title">Bantal Couple</div>
+      <a href="https://s.shopee.com.my/9zlBpkETHW" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+<div class="gift-item">
+    <img src="Sejadah.jpeg" alt="Sejadah">
+    <div class="gift-info">
+      <div class="gift-title">Sejadah</div>
+      <a href="https://s.shopee.com.my/10qN6wxK0Q" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+<div class="gift-item">
+    <img src="Rak Kasut.jpeg" alt="Rak Kasut">
+    <div class="gift-info">
+      <div class="gift-title">Rak Kasut</div>
+      <a href="https://s.shopee.com.my/8007RbfIDg" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+<div class="gift-item">
+    <img src="Mop.jpeg" alt="Mop">
+    <div class="gift-info">
+      <div class="gift-title">Mop</div>
+      <a href="https://s.shopee.com.my/10qN6MK2HQ" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+<div class="gift-item">
+    <img src="Set Penyapu & Penyodok.jpeg" alt="Set Penyapu & Penyodok">
+    <div class="gift-info">
+      <div class="gift-title">Set Penyapu & Penyodok</div>
+      <a href="https://s.shopee.com.my/gDWhbvJru" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+<div class="gift-item">
+    <img src="Iron Board.jpeg" alt="Iron Board">
+    <div class="gift-info">
+      <div class="gift-title">Iron Board</div>
+      <a href="https://s.shopee.com.my/2qI1HTP9mK" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+<div class="gift-item">
+    <img src="Jug Air.jpeg" alt="Jug Air">
+    <div class="gift-info">
+      <div class="gift-title">Jug Air</div>
+      <a href="https://s.shopee.com.my/4VQKeby71y" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+<div class="gift-item">
+    <img src="Rak Pinggan.jpeg" alt="Rak Pinggan">
+    <div class="gift-info">
+      <div class="gift-title">Rak Pinggan</div>
+      <a href="https://s.shopee.com.my/9zlHCZG8Wu" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+<div class="gift-item">
+    <img src="Frame Ayat Al-Quran.jpeg" alt="Frame Ayat Al-Quran">
+    <div class="gift-info">
+      <div class="gift-title">Frame Ayat Al-Quran</div>
+      <a href="https://s.shopee.com.my/9UouuPPzwv" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+<div class="gift-item">
+    <img src="Set Tupperware + Senduk.jpeg" alt="Set Tupperware + Senduk">
+    <div class="gift-info">
+      <div class="gift-title">Set Tupperware +  Senduk</div>
+      <a href="https://s.shopee.com.my/3LEHZXRrPv" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+<div class="gift-item">
+    <img src="Ampaian Baju.jpeg" alt="Ampaian Baju">
+    <div class="gift-info">
+      <div class="gift-title">Ampaian Baju</div>
+      <a href="https://s.shopee.com.my/4L6p3lV1VY" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+<div class="gift-item">
+    <img src="Jam Dinding Custom.jpg" alt="Jam Dinding Custom">
+    <div class="gift-info">
+      <div class="gift-title">Jam Dinding Custom</div>
+      <a href="https://s.shopee.com.my/AUhS67cpPd" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+<div class="gift-item">
+    <img src="Multifunctional Rack.jpg" alt="Multifunctional Rack">
+    <div class="gift-info">
+      <div class="gift-title">Multifunctional Rack</div>
+      <a href="https://s.shopee.com.my/LafzG2Vvf" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+<div class="gift-item">
+    <img src="Rak Cawan.jpg" alt="Rak Cawan">
+    <div class="gift-info">
+      <div class="gift-title">Rak Cawan</div>
+      <a href="https://s.shopee.com.my/4L6okYJHvB" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+  <div class="gift-item">
+    <img src="24 pcs Cutlery Set.jpg" alt="24 pcs Cutlery Set">
+    <div class="gift-info">
+      <div class="gift-title">24 pcs Cutlery Set</div>
+      <a href="https://s.shopee.com.my/8KcxVd9tbc" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+  <div class="gift-item">
+    <img src="12Pcs Cooking Tools set.jpg" alt="12Pcs Cooking Tools set">
+    <div class="gift-info">
+      <div class="gift-title">12Pcs Cooking Tools set</div>
+      <a href="https://s.shopee.com.my/6Krt7rB8Ni" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+  <div class="gift-item">
+    <img src="Tupperware.jpg" alt="Tupperware">
+    <div class="gift-info">
+      <div class="gift-title">Tupperware</div>
+      <a href="https://s.shopee.com.my/7fNGi1ispUxM" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+  <div class="gift-item">
+    <img src="12 Pcs Set Periuk DESSINI ITALY.jpg" alt="12 Pcs Set Periuk DESSINI ITALY">
+    <div class="gift-info">
+      <div class="gift-title">12 Pcs Set Periuk DESSINI ITALY</div>
+      <a href="https://s.shopee.com.my/4AnOXcd2pM" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+    <div class="gift-item">
+    <img src="3 Pcs Set Pan.jpg" alt="3 Pcs Set Pan">
+    <div class="gift-info">
+      <div class="gift-title">3 Pcs Set Pan</div>
+      <a href="https://s.shopee.com.my/2fyaZ3yRZh" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+      <div class="gift-item">
+    <img src="3 Pcs Set Kuali.jpg" alt="3 Pcs Set Kuali">
+    <div class="gift-info">
+      <div class="gift-title">3 Pcs Set Kuali</div>
+      <a href="https://s.shopee.com.my/AA4bUj3e8w" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+  <div class="gift-item">
+    <img src="Bowl Container Set.jpg" alt="Bowl Container Set">
+    <div class="gift-info">
+      <div class="gift-title">Bowl Container Set</div>
+      <a href="https://s.shopee.com.my/5AfvjUVPAg" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+  <div class="gift-item">
+    <img src="Rice Storage Box.jpg" alt="Rice Storage Box">
+    <div class="gift-info">
+      <div class="gift-title">Rice Storage Box</div>
+      <a href="https://s.shopee.com.my/3AurLTXgSi" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+  <div class="gift-item">
+    <img src="Baju Tidur Unisex (Couple).jpg" alt="Baju Tidur Unisex (Couple)">
+    <div class="gift-info">
+      <div class="gift-title">Baju Tidur Unisex (Couple)</div>
+      <a href="https://s.shopee.com.my/8fFnt9jzlB" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+  <div class="gift-item">
+    <img src="Tudung Saji.jpg" alt="Tudung Saji">
+    <div class="gift-info">
+      <div class="gift-title">Tudung Saji</div>
+      <a href="https://s.shopee.com.my/7pggq5wVOq" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+  <div class="gift-item">
+    <img src="Rehal Ukir Nama.jpg" alt="Rehal Ukir Nama">
+    <div class="gift-info">
+      <div class="gift-title">Rehal Ukir Nama</div>
+      <a href="https://s.shopee.com.my/9pRlCa0yji" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+  <div class="gift-item">
+    <img src="Telekung Khadijah.jpg" alt="Telekung Khadijah">
+    <div class="gift-info">
+      <div class="gift-title">Telekung Khadijah</div>
+      <a href="https://s.shopee.com.my/8zse6lyyiR" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
+   <div class="gift-item">
+    <img src="Set Pinggan Plastik.jpg" alt="Set Pinggan Plastik">
+    <div class="gift-info">
+      <div class="gift-title">Set Pinggan Plastik</div>
+      <a href="https://s.shopee.com.my/9f8KselYg6" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>   
+
+    <div class="gift-item">
+    <img src="Set Cawan Couple.jpg" alt="Set Cawan Couple">
+    <div class="gift-info">
+      <div class="gift-title">Set Cawan Couple</div>
+      <a href="https://s.shopee.com.my/9zlBGuoqSv" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>   
+
+    <div class="gift-item">
+    <img src="Lesung Batu.jpg" alt="Lesung Batu">
+    <div class="gift-info">
+      <div class="gift-title">Lesung Batu</div>
+      <a href="https://s.shopee.com.my/xpMOYwwa" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>   
+
+    <div class="gift-item">
+    <img src="Bekas Rempah Ratus.jpg" alt="Bekas Rempah Ratus">
+    <div class="gift-info">
+      <div class="gift-title"LBekas Rempah Ratus</div>
+      <a href="https://s.shopee.com.my/6fUjHQ5Prk" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>   
+
+    <div class="gift-item">
+    <img src="Tuala Couple Set (Custom).jpg" alt="Tuala Couple Set (Custom)">
+    <div class="gift-info">
+      <div class="gift-title"Tuala Couple Set (Custom)</div>
+      <a href="https://s.shopee.com.my/4q355schT1" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>   
+
+    <div class="gift-item">
+    <img src="7 in 1 Kitchen Knife Set.jpg" alt="7 in 1 Kitchen Knife Set">
+    <div class="gift-info">
+      <div class="gift-title"7 in 1 Kitchen Knife Set</div>
+      <a href="https://s.shopee.com.my/4q355schT1" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>   
+
+    <div class="gift-item">
+    <img src="Periuk Kukus.jpg" alt="Periuk Kukus">
+    <div class="gift-info">
+      <div class="gift-title">Periuk Kukus</div>
+      <a href="https://shopee.com.my/3-LAYER-STAINLESS-STEEL-MULTIPURPOSE-STEAMER-POT-32-28-CM-SOUP-POT-COOKING-POT-LAYERS-COMPOUND-STEEL-PERIUK-PENGUKUS-i.85452210.18764076614?sp_atk=06c9a0d3-bc45-44c7-8884-1646263f81b4&xptdk=06c9a0d3-bc45-44c7-8884-1646263f81b4" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
+      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+    </div>
+  </div>
+
 
   <script>
     function tempah(button) {
@@ -523,6 +940,213 @@ Link: ${item.link}
 
 
 
+   <section id="Seksyen Contact">
+    <h2>📞 Contact</h2>
+    <p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RSVP</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .phone-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 10px;
+      padding: 12px 24px;
+      font-size: 16px;
+      color: white;
+      background-color: #28a745;
+      border: none;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .phone-button:hover {
+      background-color: #218838;
+    }
+
+    .phone-icon {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+
+    <!-- Tombol Telefon 1 -->
+  <a href="tel:+601157265723" class="phone-button">
+    <i class="fas fa-phone phone-icon"></i>
+    Fazilah (Ibu)
+  </a>
+
+   <!-- Tombol Telefon 2 -->
+  <a href="tel:+601157265723" class="phone-button">
+    <i class="fas fa-phone phone-icon"></i>
+    Zulkefli (Ayah)
+  </a>
+
+</body>
+</html>
+    </section>
+
+
+
+
+  <section id="Seksyen Location" style="text-align:center; padding: 40px 20px;">
+  <h2>📍 Location</h2>
+   <p>
+    Dewan Bandar Behrang 2020<br>
+    Bandar Behrang 2020<br>
+    35900 Tanjong Malim, Perak
+  </p>
+
+  <div style="margin-top: 20px;">
+    <a href="hhttps://maps.app.goo.gl/KYZcM4NcTKrCdBi78?g_st=awr" 
+       target="_blank" 
+       style="display: inline-block; background-color: #34a853; color: white; padding: 12px 20px; margin: 10px; border-radius: 8px; text-decoration: none;">
+      Google Maps
+    </a>
+
+    <a href="https://waze.com/ul/hw28jjnfyr" 
+       target="_blank" 
+       style="display: inline-block; background-color: #05c3de; color: white; padding: 12px 20px; margin: 10px; border-radius: 8px; text-decoration: none;">
+      Waze
+    </a>
+  </div>
+</section>
+
+    
+
+  
+  <!-- Footer Sticky -->
+  <div class="footer">
+    <div class="footer-icon rsvp" onclick="toggleSection('Seksyen RSVP')">
+      💌 <span>RSVP</span>
+    </div>
+    <div class="footer-icon money" onclick="toggleSection('Seksyen Money Gift')">
+      💸 <span>Money Gift</span>
+    </div>
+    <div class="footer-icon wishlist" onclick="toggleSection('Seksyen Wishlist')">
+      🎁 <span>Wishlist</span>
+    </div>
+    <div class="footer-icon contact" onclick="toggleSection('Seksyen Contact')">
+      📞 <span>Contact</span>
+    </div>
+    <div class="footer-icon location" onclick="toggleSection('Seksyen Location')">
+      📍 <span>Location</span>
+    </div>
+  </div>
+
+  <!-- JavaScript Scroll Function -->
+  <script>
+    function toggleSection(id) {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  </script>
+
+</body>
+</html>
+
+
+
+    
+ <!-- Page 7 -->
+      <!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <title>Senarai Hadiah & Tracking</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 30px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+    tr:nth-child(even) {
+      background-color: #fcfcfc;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+    a {
+      color: #0066cc;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Pemberian Hadiah & No. Tracking</h1>
+
+  <p style="text-align:center;">
+    👇 <a href="https://forms.gle/H4gnfoLTTUULh2XT7" target="_blank">Klik sini untuk isi maklumat pemberiah hadiah</a>
+  </p>
+
+  <table id="hadiah-table">
+    <thead>
+      <tr>
+        <th>Nama Pemberi Hadiah</th>
+        <th>No. Tracking</th>
+        <th>Link Tracking</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    async function fetchCSVData() {
+      const url = "https://docs.google.com/spreadsheets/d/1BEs4b9m2mz2etkpcO5qoU10bFgreWH1Lft1MUI7YXVA/gviz/tq?tqx=out:csv";
+      const response = await fetch(url);
+      const csvText = await response.text();
+      const lines = csvText.trim().split("\n").slice(1); // Skip header row
+
+      const tbody = document.querySelector("#hadiah-table tbody");
+
+      lines.forEach(line => {
+        const cols = line.split(",");
+        const nama = cols[0]?.replaceAll('"', '') || '';
+        const tracking = cols[1]?.replaceAll('"', '') || '';
+        const link = tracking ? `<a href="https://easyparcel.com/my/en/track/?tracking_number=${tracking}" target="_blank">Track</a>` : '-';
+
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${nama}</td>
+          <td>${tracking}</td>
+          <td>${link}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    fetchCSVData();
+  </script>
+
+</body>
+</html>
+  </section>
+
 
 
 
@@ -554,7 +1178,19 @@ Link: ${item.link}
 
 
 
-    
+
+
+
+
+
+
+
+
+
+      
+
+
+  
   </div>
  
   <script>
@@ -581,57 +1217,3 @@ Link: ${item.link}
 
 </body>
 </html>
-
-  <!-- ... semua section di atas ... -->
-
-<!-- Tambah kod footer di sini -->
-<!-- Footer Section -->
-<!-- Link Font Awesome (letak dalam <head> kalau belum ada) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<!-- Footer -->
-<footer style="background-color:#f5f5f5; padding: 5px 5px; text-align: center; font-family: sans-serif; font-size: 14px;">
-  <div style="margin-bottom: 10px;">
-  </div>
-  <p style="color: #777;">&copy; KadDigitalNNA</p>
-</footer>
-
-
-</body>
-</html>
-
-<!-- Font Awesome (letak dalam <head> jika belum ada) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<!-- Fixed Footer -->
-<footer style="
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #f5f5f5;
-  border-top: 1px solid #ccc;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 10px 0;
-  font-family: sans-serif;
-  z-index: 1000;
-  font-size: 14px;
-">
-  <a href="#rsvp" title="RSVP" style="color: #333; text-decoration: none;">
-    <i class="fas fa-clipboard-check"></i><br>RSVP
-  </a>
-  <a href="#moneygift" title="Money Gift" style="color: #333; text-decoration: none;">
-    <i class="fas fa-money-bill-wave"></i><br>Gift
-  </a>
-  <a href="#wishlist" title="Wishlist" style="color: #333; text-decoration: none;">
-    <i class="fas fa-gift"></i><br>Wishlist
-  </a>
-  <a href="#contact" title="Contact" style="color: #333; text-decoration: none;">
-    <i class="fas fa-phone-alt"></i><br>Contact
-  </a>
-  <a href="#location" title="Location" style="color: #333; text-decoration: none;">
-    <i class="fas fa-map-marker-alt"></i><br>Location
-  </a>
-</footer>
