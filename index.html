@@ -1149,11 +1149,89 @@
 
 
  <!-- Page 7 -->
-<form action="https://docs.google.com/forms/d/e/1FAIpQLSegXKxZP8RSZZcGW3HWHPSMufcfU7d-F-JM13QhpQU6pRKHGg/formResponse" method="POST" target="_blank">
-  <input type="text" name="entry.1517587209" placeholder="Nama penuh" required>
-  <textarea name="entry.1732589785" placeholder="Ucapan / Doa" required></textarea>
-  <button type="submit">Hantar</button>
-</form>
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ucapan Tetamu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #fef9f6;
+    }
+    form, #ucapan-container {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      background: #f88fa1;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .ucapan-item {
+      margin-bottom: 20px;
+      border-bottom: 1px dashed #ddd;
+      padding-bottom: 10px;
+    }
+    .ucapan-item strong {
+      color: #d14a61;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Buku Ucapan Tetamu</h2>
+
+  <!-- ✅ Form hantar ucapan -->
+  <form action="https://docs.google.com/forms/d/e/1FAIpQLSegXKxZP8RSZZcGW3HWHPSMufcfU7d-F-JM13QhpQU6pRKHGg/formResponse" method="POST" target="hidden_iframe" onsubmit="this.reset(); alert('Terima kasih atas ucapan anda!');">
+    <input type="text" name="entry.1517587209" placeholder="Nama anda" required>
+    <textarea name="entry.1732589785" placeholder="Ucapan / Doa anda" required></textarea>
+    <button type="submit">Hantar Ucapan</button>
+  </form>
+  <iframe name="hidden_iframe" style="display:none;"></iframe>
+
+  <!-- ✅ Paparan ucapan -->
+  <div id="ucapan-container">Memuatkan ucapan...</div>
+
+  <script>
+    fetch("https://script.google.com/macros/s/AKfycbwkGU9eUZRXRJW4iBzG2WMu0OwNP98nww-ufS_3uWolbjpZVm3pJHY0b46myAQCEOS2/exec")
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById("ucapan-container");
+        container.innerHTML = "";
+
+        data.reverse().forEach(entry => {
+          const item = document.createElement("div");
+          item.className = "ucapan-item";
+          item.innerHTML = `<strong>${entry.nama}</strong><br>${entry.ucapan}`;
+          container.appendChild(item);
+        });
+      })
+      .catch(err => {
+        document.getElementById("ucapan-container").innerText = "Gagal memuatkan ucapan.";
+        console.error(err);
+      });
+  </script>
+
+</body>
+</html>
+ </section>
 
 
 
