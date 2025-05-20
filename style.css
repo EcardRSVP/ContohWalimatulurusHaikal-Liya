@@ -127,3 +127,37 @@ button {
   }
 }
 
+
+
+
+/* Sticky Footer */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 -1px 5px rgba(0,0,0,0.1);
+  border-top: 1px solid #ddd;
+  z-index: 1000;
+}
+
+.footer-icon {
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.footer-icon span {
+  display: block;
+  font-size: 11px;
+}
+
+/* Pastikan kandungan tak ditindih footer */
+body {
+  padding-bottom: 80px;
+}
