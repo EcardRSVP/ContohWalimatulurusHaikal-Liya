@@ -1,61 +1,128 @@
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background-color: #fffafc;
-  padding-bottom: 100px;
-}
-
-.page {
-  padding: 40px 20px;
-  max-width: 600px;
-  margin: auto;
-}
-
-h1, h2 {
+  font-family: 'Georgia', serif;
   text-align: center;
-  color: #c2185b;
+  background: url('https://www.transparenttextures.com/patterns/cream-paper.png'); /* Soft textured paper background */
+  color: #333;
+  margin: 0;
+  padding: 0;
 }
 
-input, textarea {
-  width: 100%;
+section {
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 30px auto;
+  padding: 30px;
+  max-width: 700px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hero h1 {
+  font-family: 'Times New Roman', serif;
+  font-size: 36px;
+  color: #8B0000; /* Dark red */
+}
+
+.hero p {
+  font-size: 20px;
+  color: #5A5A5A;
+}
+
+h2 {
+  font-size: 28px;
+  color: #4A4A4A;
+  margin-bottom: 10px;
+}
+
+input, button {
   padding: 10px;
-  margin: 8px 0;
-  border-radius: 5px;
+  margin: 10px;
+  width: 80%;
+  max-width: 400px;
+  font-size: 16px;
+}
+
+input {
   border: 1px solid #ccc;
+  border-radius: 6px;
 }
 
 button {
-  padding: 10px 15px;
-  background: #007bff;
-  color: white;
+  background-color: #8B0000;
   border: none;
-  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  border-radius: 6px;
   cursor: pointer;
 }
 
-.gift-item {
-  display: flex;
-  background: #f9f9f9;
-  padding: 10px;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  gap: 15px;
-  align-items: center;
+button:hover {
+  background-color: #A52A2A;
 }
 
-.gift-item img {
-  width: 80px;
-  border-radius: 5px;
+footer {
+  font-size: 14px;
+  color: #777;
+  margin-top: 40px;
 }
 
-.footer {
-  position: fixed;
-  bottom: 0;
-  left: 0; right: 0;
-  background: white;
-  display: flex;
-  justify-content: space-around;
-  padding: 10px 0;
-  border-top: 1px solid #ccc;
-  z-index: 1000;
+
+
+
+
+
+
+
+/* RESPONSIF CONTAINER */
+.container, .page, section {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Imej responsif */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive text */
+h1, h2, p {
+  word-wrap: break-word;
+}
+
+/* Responsive button */
+button {
+  max-width: 100%;
+}
+
+/* RESPONSIF TAMBAHAN UNTUK SKRIN KECIL */
+@media (max-width: 768px) {
+  h1, h2 {
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  .countdown div {
+    min-width: 60px;
+  }
+
+  .gift-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .gift-item img {
+    width: 100%;
+    height: auto;
+  }
+
+  .footer {
+    flex-wrap: wrap;
+  }
 }
