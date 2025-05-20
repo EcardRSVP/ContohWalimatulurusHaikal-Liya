@@ -1,66 +1,61 @@
 body {
-  font-family: 'Georgia', serif;
-  text-align: center;
-  background: url('https://www.transparenttextures.com/patterns/cream-paper.png'); /* Soft textured paper background */
-  color: #333;
+  font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
+  background-color: #fffafc;
+  padding-bottom: 100px;
 }
 
-section {
-  background-color: rgba(255, 255, 255, 0.8);
-  margin: 30px auto;
-  padding: 30px;
-  max-width: 700px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+.page {
+  padding: 40px 20px;
+  max-width: 600px;
+  margin: auto;
 }
 
-.hero h1 {
-  font-family: 'Times New Roman', serif;
-  font-size: 36px;
-  color: #8B0000; /* Dark red */
+h1, h2 {
+  text-align: center;
+  color: #c2185b;
 }
 
-.hero p {
-  font-size: 20px;
-  color: #5A5A5A;
-}
-
-h2 {
-  font-size: 28px;
-  color: #4A4A4A;
-  margin-bottom: 10px;
-}
-
-input, button {
+input, textarea {
+  width: 100%;
   padding: 10px;
-  margin: 10px;
-  width: 80%;
-  max-width: 400px;
-  font-size: 16px;
-}
-
-input {
+  margin: 8px 0;
+  border-radius: 5px;
   border: 1px solid #ccc;
-  border-radius: 6px;
 }
 
 button {
-  background-color: #8B0000;
-  border: none;
+  padding: 10px 15px;
+  background: #007bff;
   color: white;
-  font-size: 16px;
-  border-radius: 6px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #A52A2A;
+.gift-item {
+  display: flex;
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  gap: 15px;
+  align-items: center;
 }
 
-footer {
-  font-size: 14px;
-  color: #777;
-  margin-top: 40px;
+.gift-item img {
+  width: 80px;
+  border-radius: 5px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0; right: 0;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  border-top: 1px solid #ccc;
+  z-index: 1000;
 }
