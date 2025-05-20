@@ -227,213 +227,62 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Footer Scroll Section</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jemputan Kahwin</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
-    body {
-      margin: 0;
-      padding-bottom: 80px;
-      font-family: sans-serif;
-      scroll-behavior: smooth; /* smooth scroll effect */
-    }
-
-    section {
-      padding: 60px 20px;
-      border-bottom: 1px solid #ccc;
-      min-height: 300px;
-    }
-
-    .footer {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 60px;
-      background-color: #ffffff;
-      display: flex;
-      justify-content: space-around;
+    .hidden-section { display: none; }
+    .phone-button {
+      display: inline-flex;
       align-items: center;
-      box-shadow: 0 -1px 5px rgba(0,0,0,0.1);
-      border-top: 1px solid #ddd;
-      z-index: 1000;
-    }
-
-    .footer-icon {
-      text-align: center;
-      font-size: 20px;
-      cursor: pointer;
-    }
-
-    .footer-icon span {
-      display: block;
-      font-size: 11px;
-    }
-
-    /* Warna ikon */
-    .rsvp { color: #e91e63; }
-    .money { color: #4caf50; }
-    .contact { color: #ff9800; }
-    .wishlist { color: #9c27b0; }
-    .location { color: #03a9f4; }
-    .calendar { color: #607d8b; }
-  </style>
-</head>
-<body>
-
-  <!-- Seksyen-seksyen -->
-    <section id="Seksyen RSVP" class="active">
-    <h2>💌 RSVP</h2>
-      <form>
-        <input type="text" placeholder="Nama Anda" required>
-            <label>
-      <input type="radio" name="attendance" value="Hadir" required>
-      Hadir
-    </label>
-    <label>
-      <input type="radio" name="attendance" value="Tidak Hadir">
-      Tidak Hadir
-    </label><br><br>
-        <label for="jumlah">Bilangan Kehadiran</label><br>
-  <input type="number" id="jumlah" name="jumlah" min="1"><br><br>
-
-        <button type="submit">Hantar</button>
-      </form>
-    </section>
-
-
-
-
-  <section id="Seksyen Money Gift">
-    <h2>💸 Money Gift</h2>
-     <p><strong>Nama Bank :</strong> Maybank Berhad</p>
-     <p><strong>Nama :</strong> Muhammad Haikal Bin Zulkefli</p>
-     <p><strong>Nombor Akaun:</strong> <span id="rek">1234567890</span></p>
-      <button onclick="copyRek()">Copy</button>
-        <p>Imbas kod QR</p>
-        <img src="Contoh QR.jpg" alt="Kod QR">
-
-          <script>
-    function copyRek() {
-      const text = document.getElementById("rek").innerText;
-      navigator.clipboard.writeText(text).then(() => {
-        alert("Nombor akaun bank telah disalin");
-      });
-          }
-  </script>
-</body>
-</html>
-      </div>
-    </section>
-
-
-
-  
-  <section id="Seksyen Wishlist">
-    <h2>🎁 Wishlist</h2>
-<div style="text-align: center;">
- 
-
-  <p><strong>Nama Penerima</strong>
-  <div style="background-color: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 10px;">
-    <span id="nama">Muhammad Haikal Bin Zulkefli</span>
-    <button onclick="copyText('nama')" style="margin-left:10px;">Copy</button>
-  </div>
-
-  <p><strong>Alamat Penghantaran</strong>
-  <div style="background-color: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 10px;">
-    <span id="alamat">
-     No xx, Jalan xx, Taman xx, 35900 Tanjong Malim, Perak
-    </span>
-    <button onclick="copyText('alamat')" style="margin-left:10px;">Copy</button>
-  </div>
-
-  <p><strong>Nombor Telefon</strong>
-  <div style="background-color: #f8f9fa; padding: 10px; border-radius: 8px;">
-    <span id="telefon">0134567890</span>
-    <button onclick="copyText('telefon')" style="margin-left:10px;">Copy</button>
-  </div>
-</div>
-
-<script>
-  function copyText(id) {
-    const text = document.getElementById(id).innerText;
-    navigator.clipboard.writeText(text).then(() => {
-      alert("Disalin: " + text);
-    });
-  }
-</script>
-    <br><br><br>
-
-
-
-    
-<!DOCTYPE html>
-<html lang="ms">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Wishlist Hadiah Kahwin</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f8f9fa;
-      padding: 20px;
-    }
-    .gift-item {
-      background: #ffffff;
-      padding: 15px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      display: flex;
-      align-items: center;
-    }
-    .gift-item img {
-      width: 80px;
-      height: auto;
-      margin-right: 15px;
-      border-radius: 5px;
-    }
-    .gift-info {
-      flex: 1;
-    }
-    .gift-title {
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-    .btn {
-      padding: 6px 12px;
-      border: none;
-      border-radius: 6px;
-      margin-right: 5px;
-      cursor: pointer;
-      font-size: 14px;
-    }
-    .btn-tempah {
-      background-color: #007bff;
+      gap: 10px;
+      margin: 10px;
+      padding: 12px 24px;
+      font-size: 16px;
       color: white;
-    }
-    .btn-telah {
       background-color: #28a745;
-      color: white;
-      cursor: default;
-    }
-    .btn-link {
-      background-color: #6c757d;
-      color: white;
+      border: none;
+      border-radius: 12px;
       text-decoration: none;
     }
   </style>
 </head>
 <body>
 
- <div class="gift-item">
-    <img src="Microwave Oven.jpg" alt="Microwave Oven">
+<!-- ✅ Seksyen RSVP -->
+<section id="Seksyen RSVP" class="hidden-section">
+  <h2>💌 RSVP</h2>
+  <form>
+    <input type="text" placeholder="Nama Anda" required>
+    <label><input type="radio" name="attendance" value="Hadir" required> Hadir</label>
+    <label><input type="radio" name="attendance" value="Tidak Hadir"> Tidak Hadir</label><br><br>
+    <label>Bilangan Kehadiran</label><br>
+    <input type="number" id="jumlah" name="jumlah" min="1"><br><br>
+    <button type="submit">Hantar</button>
+  </form>
+</section>
+
+<!-- ✅ Seksyen Money Gift -->
+<section id="Seksyen Money Gift" class="hidden-section">
+  <h2>💸 Money Gift</h2>
+  <p><strong>Nama Bank :</strong> Maybank Berhad</p>
+  <p><strong>Nama :</strong> Muhammad Haikal Bin Zulkefli</p>
+  <p><strong>Nombor Akaun:</strong> <span id="rek">1234567890</span></p>
+  <button onclick="copyRek()">Copy</button>
+  <p>Imbas kod QR</p>
+  <img src="Contoh QR.jpg" alt="Kod QR" />
+</section>
+
+<!-- ✅ Seksyen Wishlist (Ringkasan) -->
+<section id="Seksyen Wishlist" class="hidden-section">
+  <h2>🎁 Wishlist</h2>
+  <div class="gift-item">
+    <img src="Microwave Oven.jpg" alt="Microwave Oven" style="width:80px;">
     <div class="gift-info">
       <div class="gift-title">Microwave Oven</div>
-      <a href="https://s.shopee.com.my/Vu5yuSFl9" class="btn btn-link" target="_blank">🔗 Link Shopee</a>
-      <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
+      <a href="https://s.shopee.com.my/Vu5yuSFl9" target="_blank">🔗 Shopee</a>
+      <button onclick="tempah(this)">Tempah</button>
     </div>
   </div>
 
@@ -922,105 +771,23 @@
       <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
     </div>
   </div>
-
-
-  <script>
-    function tempah(button) {
-      button.innerText = '✔ Telah Ditempah';
-      button.classList.remove('btn-tempah');
-      button.classList.add('btn-telah');
-      button.disabled = true;
-    }
-  </script>
-
-</body>
-</html>
-
-
-
-
-   <section id="Seksyen Contact">
-    <h2>📞 Contact</h2>
-    <p>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>RSVP</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    .phone-button {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin: 10px;
-      padding: 12px 24px;
-      font-size: 16px;
-      color: white;
-      background-color: #28a745;
-      border: none;
-      border-radius: 12px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
-
-    .phone-button:hover {
-      background-color: #218838;
-    }
-
-    .phone-icon {
-      font-size: 18px;
-    }
-  </style>
-</head>
-<body>
-
-
-    <!-- Tombol Telefon 1 -->
-  <a href="tel:+601157265723" class="phone-button">
-    <i class="fas fa-phone phone-icon"></i>
-    Fazilah (Ibu)
-  </a>
-
-   <!-- Tombol Telefon 2 -->
-  <a href="tel:+601157265723" class="phone-button">
-    <i class="fas fa-phone phone-icon"></i>
-    Zulkefli (Ayah)
-  </a>
-
-</body>
-</html>
-    </section>
-
-
-
-
-  <section id="Seksyen Location" style="text-align:center; padding: 40px 20px;">
-  <h2>📍 Location</h2>
-   <p>
-    Dewan Bandar Behrang 2020<br>
-    Bandar Behrang 2020<br>
-    35900 Tanjong Malim, Perak
-  </p>
-
-  <div style="margin-top: 20px;">
-    <a href="hhttps://maps.app.goo.gl/KYZcM4NcTKrCdBi78?g_st=awr" 
-       target="_blank" 
-       style="display: inline-block; background-color: #34a853; color: white; padding: 12px 20px; margin: 10px; border-radius: 8px; text-decoration: none;">
-      Google Maps
-    </a>
-
-    <a href="https://waze.com/ul/hw28jjnfyr" 
-       target="_blank" 
-       style="display: inline-block; background-color: #05c3de; color: white; padding: 12px 20px; margin: 10px; border-radius: 8px; text-decoration: none;">
-      Waze
-    </a>
-  </div>
 </section>
 
-    
+<!-- ✅ Seksyen Contact -->
+<section id="Seksyen Contact" class="hidden-section">
+  <h2>📞 Contact</h2>
+  <a href="tel:+601157265723" class="phone-button">📞 Fazilah (Ibu)</a>
+  <a href="tel:+601157265723" class="phone-button">📞 Zulkefli (Ayah)</a>
+</section>
 
-  
+<!-- ✅ Seksyen Location -->
+<section id="Seksyen Location" class="hidden-section">
+  <h2>📍 Location</h2>
+  <p>Dewan Bandar Behrang 2020<br>Bandar Behrang 2020<br>35900 Tanjong Malim, Perak</p>
+  <a href="https://maps.app.goo.gl/KYZcM4NcTKrCdBi78" target="_blank">Google Maps</a>
+  <a href="https://waze.com/ul/hw28jjnfyr" target="_blank">Waze</a>
+</section>
+
   <!-- Footer Sticky -->
   <div class="footer">
     <div class="footer-icon rsvp" onclick="toggleSection('Seksyen RSVP')">
@@ -1040,22 +807,36 @@
     </div>
   </div>
 
-  <!-- JavaScript Scroll Function -->
-  <script>
-    function toggleSection(id) {
-      const section = document.getElementById(id);
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  </script>
+<!-- ✅ JavaScript -->
+<script>
+  function toggleSection(id) {
+    const ids = ['Seksyen RSVP', 'Seksyen Money Gift', 'Seksyen Wishlist', 'Seksyen Contact', 'Seksyen Location'];
+    ids.forEach(sec => {
+      const el = document.getElementById(sec);
+      if (el) el.classList.add('hidden-section');
+    });
+    const selected = document.getElementById(id);
+    if (selected) selected.classList.remove('hidden-section');
+    selected.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function copyRek() {
+    const text = document.getElementById("rek").innerText;
+    navigator.clipboard.writeText(text).then(() => alert("Nombor akaun disalin"));
+  }
+
+  function tempah(button) {
+    button.innerText = '✔ Telah Ditempah';
+    button.disabled = true;
+  }
+</script>
 
 </body>
 </html>
 
 
 
-    
+
  <!-- Page 7 -->
       <!DOCTYPE html>
 <html lang="ms">
