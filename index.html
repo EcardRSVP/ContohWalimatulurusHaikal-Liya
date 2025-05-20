@@ -833,11 +833,12 @@
       const el = document.getElementById(sec);
       if (el) el.classList.add('hidden-section');
     });
-    const selected = document.getElementById(id);
-    if (selected) selected.classList.remove('hidden-section');
-    selected.scrollIntoView({ behavior: 'smooth' });
-  }
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
 
+
+  
   function copyRek() {
     const text = document.getElementById("rek").innerText;
     navigator.clipboard.writeText(text).then(() => alert("Nombor akaun disalin"));
