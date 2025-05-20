@@ -277,6 +277,7 @@
 <!-- ✅ Seksyen Wishlist (Ringkasan) -->
 <section id="Seksyen Wishlist" class="hidden-section">
   <h2>🎁 Wishlist</h2>
+  
   <div class="gift-item">
     <img src="Microwave Oven.jpg" alt="Microwave Oven" style="width:80px;">
     <div class="gift-info">
@@ -771,6 +772,23 @@
       <button class="btn btn-tempah" onclick="tempah(this)">Tempah</button>
     </div>
   </div>
+
+      <!-- 📦 Pemberian Hadiah & No. Tracking -->
+  <h3>📦 Pemberian Hadiah & No. Tracking</h3>
+  <p style="text-align:center;">
+    👇 <a href="https://forms.gle/H4gnfoLTTUULh2XT7" target="_blank">Klik sini untuk isi maklumat pemberian hadiah</a>
+  </p>
+
+  <table id="hadiah-table">
+    <thead>
+      <tr>
+        <th>Nama Pemberi Hadiah</th>
+        <th>No. Tracking</th>
+        <th>Link Tracking</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
 </section>
 
 <!-- ✅ Seksyen Contact -->
@@ -829,11 +847,35 @@
     button.innerText = '✔ Telah Ditempah';
     button.disabled = true;
   }
+
+ async function fetchCSVData() {
+    const url = "https://docs.google.com/spreadsheets/d/1BEs4b9m2mz2etkpcO5qoU10bFgreWH1Lft1MUI7YXVA/gviz/tq?tqx=out:csv";
+    const response = await fetch(url);
+    const csvText = await response.text();
+    const lines = csvText.trim().split("\\n").slice(1);
+
+    const tbody = document.querySelector("#hadiah-table tbody");
+    lines.forEach(line => {
+      const cols = line.split(",");
+      const nama = cols[0]?.replaceAll('"', '') || '';
+      const tracking = cols[1]?.replaceAll('"', '') || '';
+      const link = tracking ? `<a href="https://easyparcel.com/my/en/track/?tracking_number=${tracking}" target="_blank">Track</a>` : '-';
+
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${nama}</td>
+        <td>${tracking}</td>
+        <td>${link}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+  }
+
+  fetchCSVData();
 </script>
 
 </body>
 </html>
-
 
 
 
