@@ -817,22 +817,37 @@
 
 <!-- ✅ JavaScript -->
 <script>
-function toggleSection(id) {
-  const ids = ['Seksyen RSVP', 'Seksyen Money Gift', 'Seksyen Wishlist', 'Seksyen Contact', 'Seksyen Location'];
-  ids.forEach(sec => {
-    const el = document.getElementById(sec);
-    if (el) el.classList.add('hidden-section');
-  });
+  let currentVisibleSection = null;
 
-  const section = document.getElementById(id);
-  if (section) {
-    section.classList.remove('hidden-section'); // <--- penting untuk tunjukkan semula
-    section.scrollIntoView({ behavior: "smooth" });
+  function toggleSection(id) {
+    const ids = ['Seksyen RSVP', 'Seksyen Money Gift', 'Seksyen Wishlist', 'Seksyen Contact', 'Seksyen Location'];
+
+    // Jika seksyen yang ditekan adalah yang sedang aktif → sembunyikan semua
+    if (currentVisibleSection === id) {
+      ids.forEach(secId => {
+        const sec = document.getElementById(secId);
+        if (sec) sec.classList.add('hidden-section');
+      });
+      currentVisibleSection = null;
+      return;
+    }
+
+    // Sembunyikan semua dahulu
+    ids.forEach(secId => {
+      const sec = document.getElementById(secId);
+      if (sec) sec.classList.add('hidden-section');
+    });
+
+    // Tunjukkan seksyen yang diminta
+    const selected = document.getElementById(id);
+    if (selected) {
+      selected.classList.remove('hidden-section');
+      selected.scrollIntoView({ behavior: "smooth" });
+    }
+
+    currentVisibleSection = id;
   }
-}
 
-
-  
   function copyRek() {
     const text = document.getElementById("rek").innerText;
     navigator.clipboard.writeText(text).then(() => alert("Nombor akaun disalin"));
@@ -843,7 +858,7 @@ function toggleSection(id) {
     button.disabled = true;
   }
 
- async function fetchCSVData() {
+  async function fetchCSVData() {
     const url = "https://docs.google.com/spreadsheets/d/1BEs4b9m2mz2etkpcO5qoU10bFgreWH1Lft1MUI7YXVA/gviz/tq?tqx=out:csv";
     const response = await fetch(url);
     const csvText = await response.text();
@@ -869,8 +884,6 @@ function toggleSection(id) {
   fetchCSVData();
 </script>
 
-</body>
-</html>
 
 
 
