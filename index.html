@@ -817,15 +817,19 @@
 
 <!-- ✅ JavaScript -->
 <script>
-  function toggleSection(id) {
-    const ids = ['Seksyen RSVP', 'Seksyen Money Gift', 'Seksyen Wishlist', 'Seksyen Contact', 'Seksyen Location'];
-    ids.forEach(sec => {
-      const el = document.getElementById(sec);
-      if (el) el.classList.add('hidden-section');
-    });
-      const section = document.getElementById(id);
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
+function toggleSection(id) {
+  const ids = ['Seksyen RSVP', 'Seksyen Money Gift', 'Seksyen Wishlist', 'Seksyen Contact', 'Seksyen Location'];
+  ids.forEach(sec => {
+    const el = document.getElementById(sec);
+    if (el) el.classList.add('hidden-section');
+  });
+
+  const section = document.getElementById(id);
+  if (section) {
+    section.classList.remove('hidden-section'); // <--- penting untuk tunjukkan semula
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+}
 
 
   
