@@ -30,9 +30,7 @@
 <p>&amp;<p>
 <h2>Liya</h2>
 <button id="start-btn">Buka</button>
-</p></p></section>
-<!-- Page 2 -->
-<section class="page" id="main-content">
+</p></p></section><div id="main-content" style="display:none"><section class="page">
 <h2>السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</h2>
 <p>Dengan penuh kesyukuran ke hadrat ilahi, kami</p>
 <p><strong>Zulkefli Bin Abdullah &amp; Fazilah Binti Ahmad Manaf</strong>
@@ -43,9 +41,7 @@
 <p><strong>Muhammad Haikal Bin Zulkefli</strong>
 <p>dengan pilihan hatinya</p>
 <p><strong>Nurul Ilyana Binti Ilyas</strong>
-</p></p></p></p></p></p></p></p></p></section>
-<!-- Page 3 -->
-<section class="page">
+</p></p></p></p></p></p></p></p></p></section><section class="page">
 <p><strong>PADA</strong><br/>
         Rabu, 31 Disember 2025<br/>
         Bersamaan 10 Rejab 1447H
@@ -59,10 +55,7 @@
 <strong>Jamuan Makan:</strong>11.00 am - 5.00 pm<br/>
 <strong>Ketibaan Pengantin:</strong>
        1.00 pm</p>
-</section></div>
-
-<!-- Page 4 -->
-<section class="page" id="countdown-page" style="padding: 20px 10px; text-align: center; background-color: #fffafc;">
+</section><section class="page" id="countdown-page" style="padding: 20px 10px; text-align: center; background-color: #fffafc;">
 <style>
     #countdown-page h1 {
       color: #c2185b;
@@ -171,12 +164,42 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
   </script>
-</section>
+</section><section class="page hidden-section" id="Seksyen RSVP">
+<h2>💌 RSVP</h2>
+<form action="https://docs.google.com/forms/d/e/1FAIpQLSc9IzXMjZMt3t2Cw3oAe7X0rxRXWlFwxaOa4T6YK_rCCq2LQA/formResponse" method="POST" target="_blank">
+<!-- Nama -->
+<label for="nama">Nama</label>
+<input id="nama" name="entry.1043756814" placeholder="Nama Anda" required="" style="width: 100%; padding: 10px; margin-bottom: 15px;" type="text"/>
+<!-- Kehadiran -->
+<div style="display: flex; justify-content: center; gap: 30px; margin-bottom: 15px;">
+<label>
+<input name="entry.727555102" required="" type="radio" value="Hadir"/> Hadir
+      </label>
+<label>
+<input name="entry.727555102" type="radio" value="Tidak Hadir"/> Tidak Hadir
+      </label>
+</div>
+<!-- Bilangan Kehadiran -->
+<label for="bilangan">Bilangan Kehadiran</label>
+<input id="bilangan" min="1" name="entry.1537909291" placeholder="Contoh: 2" style="width: 100%; padding: 10px; margin-bottom: 20px;" type="number"/>
+<!-- Butang Hantar -->
+<button style="width: 100%; padding: 10px; background-color: maroon; color: white; border: none; border-radius: 5px; font-size: 16px;" type="submit">
+      Hantar
+    </button>
+</form>
+</section></div>
+<!-- Page 2 -->
+
+<!-- Page 3 -->
+</div>
+
+<!-- Page 4 -->
+
 <!-- Page 5 -->
 <!DOCTYPE html>
 
-
-
+<html lang="ms">
+<head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Jemputan Kahwin</title>
@@ -207,33 +230,10 @@
       background-color: #ffffff;
     }
   </style>
-</link></meta></meta>
-
+</link></meta></meta></head>
+<body>
 <!-- ✅ Seksyen RSVP -->
-<section class="page hidden-section" id="Seksyen RSVP">
-<h2>💌 RSVP</h2>
-<form action="https://docs.google.com/forms/d/e/1FAIpQLSc9IzXMjZMt3t2Cw3oAe7X0rxRXWlFwxaOa4T6YK_rCCq2LQA/formResponse" method="POST" target="_blank">
-<!-- Nama -->
-<label for="nama">Nama</label>
-<input id="nama" name="entry.1043756814" placeholder="Nama Anda" required="" style="width: 100%; padding: 10px; margin-bottom: 15px;" type="text"/>
-<!-- Kehadiran -->
-<div style="display: flex; justify-content: center; gap: 30px; margin-bottom: 15px;">
-<label>
-<input name="entry.727555102" required="" type="radio" value="Hadir"/> Hadir
-      </label>
-<label>
-<input name="entry.727555102" type="radio" value="Tidak Hadir"/> Tidak Hadir
-      </label>
-</div>
-<!-- Bilangan Kehadiran -->
-<label for="bilangan">Bilangan Kehadiran</label>
-<input id="bilangan" min="1" name="entry.1537909291" placeholder="Contoh: 2" style="width: 100%; padding: 10px; margin-bottom: 20px;" type="number"/>
-<!-- Butang Hantar -->
-<button style="width: 100%; padding: 10px; background-color: maroon; color: white; border: none; border-radius: 5px; font-size: 16px;" type="submit">
-      Hantar
-    </button>
-</form>
-</section>
+
 <!-- ✅ Seksyen Money Gift -->
 <section class="hidden-section" id="Seksyen Money Gift">
 <h2>💵 Money Gift</h2>
@@ -835,8 +835,8 @@
 <!-- Page 6 -->
 <!DOCTYPE html>
 
-
-
+<html lang="ms">
+<head>
 <meta charset="utf-8"/>
 <title>Senarai Hadiah &amp; Tracking</title>
 <style>
@@ -881,8 +881,8 @@
       background-color: #ffffff;
     }
   </style>
-
-
+</head>
+<body>
 
 <script>
     const startBtn = document.getElementById('start-btn');
@@ -905,9 +905,9 @@
       document.body.removeEventListener('touchstart', once);
     });
   </script>
-
-
-<script>
+</body>
+</html>
+</body></html><script>
 const startBtn = document.getElementById('start-btn');
 const music = document.getElementById('bg-music');
 
@@ -915,11 +915,18 @@ function startInvitation() {
   music.play().catch(e => console.log("Music autoplay blocked"));
   const mainContent = document.getElementById('main-content');
   if (mainContent) {
+    mainContent.style.display = 'block';
     mainContent.scrollIntoView({ behavior: 'smooth' });
+  }
+  const frontPage = document.querySelector('.front-page');
+  if (frontPage) {
+    frontPage.style.display = 'none';
   }
 }
 
-startBtn.addEventListener('click', startInvitation);
+if (startBtn) {
+  startBtn.addEventListener('click', startInvitation);
+}
 
 document.body.addEventListener('touchstart', function once() {
   music.play().catch(() => {});
