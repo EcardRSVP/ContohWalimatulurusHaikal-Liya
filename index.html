@@ -97,120 +97,29 @@
 
 
  <!-- Page 4 -->
-<section class="page" id="countdown-page" style="padding: 20px 10px; text-align: center; background-color: #fffafc;">
-  <style>
-    #countdown-page h1 {
-      color: #c2185b;
-      font-size: 1.3rem;
-      margin-bottom: 30px;
-    }
-
-    .countdown {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 2px; /* <--- jarak rapat antara kotak */
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      padding-bottom: 20px;
-    }
-
-    .countdown-box {
-      background: white;
-      border-radius: 8px;
-      padding: 4px;
-      min-width: 40px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-family: sans-serif;
-    }
-
-    .countdown-number {
-      font-size: 1rem;
-      font-weight: bold;
-      color: #c2185b;
-      line-height: 1;
-    }
-
-    .countdown-label {
-      font-size: 0.6rem;
-      color: #666;
-      margin-top: 1px;
-    }
-
-    @media (max-width: 400px) {
-      .countdown-box {
-        min-width: 36px;
-        padding: 3px;
-      }
-
-      .countdown-number {
-        font-size: 0.9rem;
-      }
-
-      .countdown-label {
-        font-size: 0.55rem;
-      }
-
-      #countdown-page h1 {
-        font-size: 1.1rem;
-      }
-    }
-  </style>
-
-  <h1>Menanti Hari Bahagia</h1>
-
-  <div class="countdown">
-    <div class="countdown-box">
-      <div class="countdown-number" id="days">0</div>
-      <div class="countdown-label">Hari</div>
+<section class="page" id="countdown-page">
+    <h1>Menanti Hari Bahagia</h1>
+    <div class="countdown">
+      <!-- Countdown timer HTML -->
     </div>
-    <div class="countdown-box">
-      <div class="countdown-number" id="hours">0</div>
-      <div class="countdown-label">Jam</div>
-    </div>
-    <div class="countdown-box">
-      <div class="countdown-number" id="minutes">0</div>
-      <div class="countdown-label">Minit</div>
-    </div>
-    <div class="countdown-box">
-      <div class="countdown-number" id="seconds">0</div>
-      <div class="countdown-label">Saat</div>
-    </div>
-  </div>
-  <br><br>
-
-  <script>
-    const weddingDate = new Date("2025-12-31T10:00:00").getTime();
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = weddingDate - now;
-
-      if (distance < 0) {
-        ["days","hours","minutes","seconds"].forEach(id => {
-          document.getElementById(id).textContent = "0";
-        });
-        return;
+    <script>
+      const weddingDate = new Date("2025-12-31T10:00:00").getTime();
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = weddingDate - now;
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        document.getElementById("days").textContent = days;
+        document.getElementById("hours").textContent = hours;
+        document.getElementById("minutes").textContent = minutes;
+        document.getElementById("seconds").textContent = seconds;
       }
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      document.getElementById("days").textContent = days;
-      document.getElementById("hours").textContent = hours;
-      document.getElementById("minutes").textContent = minutes;
-      document.getElementById("seconds").textContent = seconds;
-    }
-
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-  </script>
-</section>
-
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    </script>
+  </section>
 
 
 
