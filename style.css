@@ -148,3 +148,13 @@ button {
   display: block;
   font-size: 11px;
 }
+
+
+.page {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  /* atau guna margin kalau nak ruang di luar kotak */
+  /* margin-top: 20px;
+     margin-bottom: 20px; */
+}
+
