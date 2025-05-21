@@ -97,29 +97,78 @@
 
 
  <!-- Page 4 -->
-<section class="page" id="countdown-page">
-    <h1>Menanti Hari Bahagia</h1>
-    <div class="countdown">
-      <!-- Countdown timer HTML -->
+<section class="page" id="countdown-page" style="text-align: center; background-color: #fffafc;">
+  <h1 style="color: #c2185b;">Menanti Hari Bahagia</h1>
+
+  <div class="countdown" style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+    <div class="countdown-box">
+      <div class="countdown-number" id="days">0</div>
+      <div class="countdown-label">Hari</div>
     </div>
-    <script>
-      const weddingDate = new Date("2025-12-31T10:00:00").getTime();
-      function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = weddingDate - now;
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        document.getElementById("days").textContent = days;
-        document.getElementById("hours").textContent = hours;
-        document.getElementById("minutes").textContent = minutes;
-        document.getElementById("seconds").textContent = seconds;
+    <div class="countdown-box">
+      <div class="countdown-number" id="hours">0</div>
+      <div class="countdown-label">Jam</div>
+    </div>
+    <div class="countdown-box">
+      <div class="countdown-number" id="minutes">0</div>
+      <div class="countdown-label">Minit</div>
+    </div>
+    <div class="countdown-box">
+      <div class="countdown-number" id="seconds">0</div>
+      <div class="countdown-label">Saat</div>
+    </div>
+  </div>
+
+  <style>
+    .countdown-box {
+      background: white;
+      border-radius: 8px;
+      padding: 8px;
+      min-width: 50px;
+      text-align: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .countdown-number {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #c2185b;
+    }
+    .countdown-label {
+      font-size: 0.7rem;
+      color: #444;
+      margin-top: 5px;
+    }
+  </style>
+
+  <script>
+    const weddingDate = new Date("2025-12-31T10:00:00").getTime();
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      if (distance < 0) {
+        ["days", "hours", "minutes", "seconds"].forEach(id => {
+          document.getElementById(id).textContent = "0";
+        });
+        return;
       }
-      updateCountdown();
-      setInterval(updateCountdown, 1000);
-    </script>
-  </section>
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").textContent = days;
+      document.getElementById("hours").textContent = hours;
+      document.getElementById("minutes").textContent = minutes;
+      document.getElementById("seconds").textContent = seconds;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</section>
+
 
 
 
