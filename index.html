@@ -1012,84 +1012,23 @@
   </div>
 
   <!-- ✅ SCRIPT UNTUK KAWAL PAPARAN -->
-  <script>
-    const startBtn = document.getElementById('start-btn');
-    const music = document.getElementById('bg-music');
+ <script>
+const startBtn = document.getElementById('start-btn');
+const music = document.getElementById('bg-music');
 
-    function startInvitation() {
-      // Mainkan muzik
-      music.play().catch(e => console.log("Music autoplay blocked"));
+function startInvitation() {
+  music.play().catch(e => console.log("Music autoplay blocked"));
+  document.getElementById('main-content').style.display = 'block';
+  const frontPage = document.querySelector('.front-page');
+  if (frontPage) frontPage.remove();
+}
 
-      // Tunjukkan kandungan utama
-      document.getElementById('main-content').style.display = 'block';
+if (startBtn) {
+  startBtn.addEventListener('click', startInvitation);
+}
 
-      // Sembunyikan halaman depan
-      const frontPage = document.querySelector('.front-page');
-      if (frontPage) frontPage.remove();
-    }
-
-    if (startBtn) {
-      startBtn.addEventListener('click', startInvitation);
-    }
-
-    // Autoplay workaround for mobile
-    document.body.addEventListener('touchstart', function once() {
-      music.play().catch(() => {});
-      document.body.removeEventListener('touchstart', once);
-    });
-
-    // Toggle function for footer sections
-    let currentVisibleSection = null;
-    function toggleSection(id) {
-      const ids = ['Seksyen RSVP', 'Seksyen Money Gift', 'Seksyen Wishlist', 'Seksyen Contact', 'Seksyen Location'];
-
-      if (currentVisibleSection === id) {
-        ids.forEach(secId => document.getElementById(secId)?.classList.add('hidden-section'));
-        currentVisibleSection = null;
-        return;
-      }
-
-      ids.forEach(secId => document.getElementById(secId)?.classList.add('hidden-section'));
-      document.getElementById(id)?.classList.remove('hidden-section');
-      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-      currentVisibleSection = id;
-    }
-
-    function copyRek() {
-      const text = document.getElementById("rek").innerText;
-      navigator.clipboard.writeText(text).then(() => alert("Nombor akaun disalin"));
-    }
-
-    function tempah(button) {
-      button.innerText = '✔ Telah Ditempah';
-      button.disabled = true;
-    }
-
-    async function fetchCSVData() {
-      const url = "https://docs.google.com/spreadsheets/d/1BEs4b9m2mz2etkpcO5qoU10bFgreWH1Lft1MUI7YXVA/gviz/tq?tqx=out:csv";
-      const response = await fetch(url);
-      const csvText = await response.text();
-      const lines = csvText.trim().split("\\n").slice(1);
-
-      const tbody = document.querySelector("#hadiah-table tbody");
-      lines.forEach(line => {
-        const cols = line.split(",");
-        const nama = cols[0]?.replaceAll('"', '') || '';
-        const tracking = cols[1]?.replaceAll('"', '') || '';
-        const link = tracking ? `<a href="https://easyparcel.com/my/en/track/?tracking_number=${tracking}" target="_blank">Track</a>` : '-';
-
-        const tr = document.createElement("tr");
-        tr.innerHTML = `
-          <td>${nama}</td>
-          <td>${tracking}</td>
-          <td>${link}</td>
-        `;
-        tbody.appendChild(tr);
-      });
-    }
-
-    fetchCSVData();
-  </script>
-
-</body>
-</html>
+document.body.addEventListener('touchstart', function once() {
+  music.play().catch(() => {});
+  document.body.removeEventListener('touchstart', once);
+});
+</script>
