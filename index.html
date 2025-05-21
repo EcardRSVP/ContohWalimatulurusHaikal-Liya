@@ -68,7 +68,6 @@
 
 
  <!-- Page 4 -->
-   <section class="page">
 <!DOCTYPE html>
 <html lang="ms">
 <head>
@@ -92,63 +91,62 @@
 
     h1 {
       color: #c2185b;
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 1rem;
-      margin-bottom: 20px;
+      font-size: 2rem;
+      margin-bottom: 30px;
     }
 
     .countdown {
       display: flex;
       justify-content: center;
-      gap: 5px;
-      flex-wrap: nowrap;
+      align-items: flex-start;
+      gap: 15px;
+      flex-wrap: wrap;
     }
 
-    .countdown div {
+    .countdown-box {
       background: white;
-      padding: 8px;
-      border-radius: 10px;
-      min-width: 50px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 15px;
+      padding: 15px 10px;
+      min-width: 70px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s;
     }
 
-    .countdown span {
-      font-size: 1.2rem;
-      color: #c2185b;
+    .countdown-box:hover {
+      transform: scale(1.05);
+    }
+
+    .countdown-number {
+      font-size: 1.8rem;
       font-weight: bold;
+      color: #c2185b;
+      margin-bottom: 5px;
     }
 
-    .label {
-      font-size: 0.7rem;
-      margin-top: 2px;
-    }
-
-    .footer {
-      margin-top: 30px;
+    .countdown-label {
       font-size: 0.85rem;
-      color: #888;
+      color: #666;
     }
 
     @media (min-width: 480px) {
       h1 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
       }
 
-      .countdown div {
-        min-width: 65px;
-        padding: 12px;
+      .countdown-box {
+        min-width: 90px;
+        padding: 20px 15px;
       }
 
-      .countdown span {
-        font-size: 1.5rem;
+      .countdown-number {
+        font-size: 2rem;
       }
 
-      .label {
-        font-size: 0.85rem;
+      .countdown-label {
+        font-size: 1rem;
       }
     }
   </style>
@@ -158,22 +156,26 @@
   <h1>Menanti Hari Bahagia</h1>
 
   <div class="countdown">
-    <div>
-      <span id="days">0</span>
-      <div class="label">Hari</div>
+    <div class="countdown-box">
+      <div class="countdown-number" id="days">223</div>
+      <div class="countdown-label">Hari</div>
     </div>
-    <div>
-      <span id="hours">0</span>
-      <div class="label">Jam</div>
+    <div class="countdown-box">
+      <div class="countdown-number" id="hours">14</div>
+      <div class="countdown-label">Jam</div>
     </div>
-    <div>
-      <span id="minutes">0</span>
-      <div class="label">Minit</div>
+    <div class="countdown-box">
+      <div class="countdown-number" id="minutes">46</div>
+      <div class="countdown-label">Minit</div>
     </div>
-    <div>
-      <span id="seconds">0</span>
-      <div class="label">Saat</div><br><br><br>
+    <div class="countdown-box">
+      <div class="countdown-number" id="seconds">50</div>
+      <div class="countdown-label">Saat</div>
     </div>
+  </div>
+
+</body>
+</html>
 
 
 
