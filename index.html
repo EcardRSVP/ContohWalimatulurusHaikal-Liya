@@ -239,16 +239,41 @@
 <!-- ✅ Seksyen RSVP -->
 <section id="Seksyen RSVP" class="hidden-section">
   <h2>💌 RSVP</h2>
-  <form>
-    <input type="text" placeholder="Nama Anda" required>
-    <label><input type="radio" name="attendance" value="Hadir" required> Hadir</label>
-    <label><input type="radio" name="attendance" value="Tidak Hadir"> Tidak Hadir</label><br><br>
-    <label>Bilangan Kehadiran</label><br>
-    <input type="number" id="jumlah" name="jumlah" min="1"><br><br>
-    <button type="submit">Hantar</button><br><br><br>
-  </form>
-</section>
+<div id="rsvp-section" style="display: none; margin-top: 20px;">
+  <form action="https://docs.google.com/forms/d/e/1FAIpQLSc9IzXMjZMt3t2Cw3oAe7X0rxRXWlFwxaOa4T6YK_rCCq2LQA/formResponse" method="POST" target="_blank">
+    <div style="max-width: 400px; margin: 0 auto; padding: 20px; background: #f9f9f9; border-radius: 10px;">
+      <h3 style="text-align: center;">RSVP</h3>
 
+      <!-- Nama -->
+      <label for="nama">Nama</label>
+      <input type="text" id="nama" name="entry.2005620554" placeholder="Nama Anda" style="width: 100%; padding: 10px; margin-bottom: 15px;" required>
+
+      <!-- Kehadiran -->
+      <div style="display: flex; justify-content: center; gap: 30px; margin-bottom: 15px;">
+        <label>
+          <input type="radio" name="entry.1045781291" value="Hadir" required> Hadir
+        </label>
+        <label>
+          <input type="radio" name="entry.1045781291" value="Tidak Hadir"> Tidak Hadir
+        </label>
+      </div>
+
+      <!-- Bilangan Kehadiran -->
+      <label for="bilangan">Bilangan Kehadiran</label>
+      <input type="number" id="bilangan" name="entry.1166974658" min="1" placeholder="Contoh: 2" style="width: 100%; padding: 10px; margin-bottom: 20px;">
+
+      <!-- Butang Hantar -->
+      <button type="submit" style="width: 100%; padding: 10px; background-color: maroon; color: white; border: none; border-radius: 5px; font-size: 16px;">
+        Hantar
+      </button>
+    </div>
+  </form>
+</div>
+
+
+
+
+  
 <!-- ✅ Seksyen Money Gift -->
 <section id="Seksyen Money Gift" class="hidden-section">
   <h2>💵 Money Gift</h2>
