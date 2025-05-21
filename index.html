@@ -35,6 +35,24 @@
     .hidden-section {
       display: none;
     }
+    .countdown-box {
+      background: white;
+      border-radius: 8px;
+      padding: 8px;
+      min-width: 50px;
+      text-align: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .countdown-number {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #c2185b;
+    }
+    .countdown-label {
+      font-size: 0.7rem;
+      color: #444;
+      margin-top: 5px;
+    }
   </style>
 </head>
 <body>
@@ -56,7 +74,7 @@
   <!-- ✅ KANDUNGAN UTAMA (DISOROK PADA MULA) -->
   <div id="main-content" style="display: none;">
 
- <!-- Page 2 -->
+ <!-- Gabungan Page 2–4 -->
     <section class="page">
       <h2>السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</h2>
       <p>Dengan penuh kesyukuran ke hadrat ilahi, kami</p>
@@ -68,13 +86,9 @@
       <p><strong>Muhammad Haikal Bin Zulkefli</strong>
       <p>dengan pilihan hatinya</p>
        <p><strong>Nurul Ilyana Binti Ilyas</strong>
-    </section>
-    
 
-
+      <hr>   
     
-    <!-- Page 3 -->
-<section class="page">
       <p><strong>PADA</strong><br>
         Rabu, 31 Disember 2025<br>
         Bersamaan 10 Rejab 1447H
@@ -90,85 +104,81 @@
       <strong>Jamuan Makan:</strong>11.00 am - 5.00 pm<br>
       <strong>Ketibaan Pengantin:</strong>
        1.00 pm</p>
+
+      <hr> 
+
+<section id="countdown-page" style="text-align: center; background-color: #fffafc;">
+    <h1 style="color: #c2185b;">Menanti Hari Bahagia</h1>
+
+    <div class="countdown" style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+      <div class="countdown-box">
+        <div class="countdown-number" id="days">0</div>
+        <div class="countdown-label">Hari</div>
+      </div>
+      <div class="countdown-box">
+        <div class="countdown-number" id="hours">0</div>
+        <div class="countdown-label">Jam</div>
+      </div>
+      <div class="countdown-box">
+        <div class="countdown-number" id="minutes">0</div>
+        <div class="countdown-label">Minit</div>
+      </div>
+      <div class="countdown-box">
+        <div class="countdown-number" id="seconds">0</div>
+        <div class="countdown-label">Saat</div>
+      </div>
     </div>
-    </section>
 
+    <style>
+      .countdown-box {
+        background: white;
+        border-radius: 8px;
+        padding: 8px;
+        min-width: 50px;
+        text-align: center;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      }
+      .countdown-number {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #c2185b;
+      }
+      .countdown-label {
+        font-size: 0.7rem;
+        color: #444;
+        margin-top: 5px;
+      }
+    </style>
 
+    <script>
+      const weddingDate = new Date("2025-12-31T10:00:00").getTime();
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = weddingDate - now;
 
+        if (distance < 0) {
+          ["days", "hours", "minutes", "seconds"].forEach(id => {
+            document.getElementById(id).textContent = "0";
+          });
+          return;
+        }
 
- <!-- Page 4 -->
-<section class="page" id="countdown-page" style="text-align: center; background-color: #fffafc;">
-  <h1 style="color: #c2185b;">Menanti Hari Bahagia</h1>
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  <div class="countdown" style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
-    <div class="countdown-box">
-      <div class="countdown-number" id="days">0</div>
-      <div class="countdown-label">Hari</div>
-    </div>
-    <div class="countdown-box">
-      <div class="countdown-number" id="hours">0</div>
-      <div class="countdown-label">Jam</div>
-    </div>
-    <div class="countdown-box">
-      <div class="countdown-number" id="minutes">0</div>
-      <div class="countdown-label">Minit</div>
-    </div>
-    <div class="countdown-box">
-      <div class="countdown-number" id="seconds">0</div>
-      <div class="countdown-label">Saat</div>
-    </div>
-  </div>
-
-  <style>
-    .countdown-box {
-      background: white;
-      border-radius: 8px;
-      padding: 8px;
-      min-width: 50px;
-      text-align: center;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    }
-    .countdown-number {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #c2185b;
-    }
-    .countdown-label {
-      font-size: 0.7rem;
-      color: #444;
-      margin-top: 5px;
-    }
-  </style>
-
-  <script>
-    const weddingDate = new Date("2025-12-31T10:00:00").getTime();
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = weddingDate - now;
-
-      if (distance < 0) {
-        ["days", "hours", "minutes", "seconds"].forEach(id => {
-          document.getElementById(id).textContent = "0";
-        });
-        return;
+        document.getElementById("days").textContent = days;
+        document.getElementById("hours").textContent = hours;
+        document.getElementById("minutes").textContent = minutes;
+        document.getElementById("seconds").textContent = seconds;
       }
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      document.getElementById("days").textContent = days;
-      document.getElementById("hours").textContent = hours;
-      document.getElementById("minutes").textContent = minutes;
-      document.getElementById("seconds").textContent = seconds;
-    }
-
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-  </script>
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    </script>
+  </section>
 </section>
-
 
 
 
