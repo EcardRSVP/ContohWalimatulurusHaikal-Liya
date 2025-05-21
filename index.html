@@ -68,79 +68,65 @@
 
 
  <!-- Page 4 -->
-<section class="page" id="countdown-page" style="padding: 40px 20px; text-align: center; background-color: #fffafc;">
+<section class="page" id="countdown-page" style="padding: 20px 10px; text-align: center; background-color: #fffafc;">
   <style>
     #countdown-page h1 {
       color: #c2185b;
-      font-size: 2rem;
-      margin-bottom: 30px;
+      font-size: 1.3rem;
+      margin-bottom: 20px;
     }
 
     .countdown {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 2.5px;
+      gap: 2px; /* <--- jarak rapat antara kotak */
       flex-wrap: nowrap;
       overflow-x: auto;
-      padding-bottom: 10px;
-      scroll-behavior: smooth;
-    }
-
-    .countdown::-webkit-scrollbar {
-      height: 6px;
-    }
-
-    .countdown::-webkit-scrollbar-thumb {
-      background: #ccc;
-      border-radius: 3px;
+      padding-bottom: 5px;
     }
 
     .countdown-box {
       background: white;
-      border-radius: 15px;
-      padding: 5px;
+      border-radius: 8px;
+      padding: 4px;
       min-width: 40px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
       display: flex;
       flex-direction: column;
       align-items: center;
-      flex-shrink: 0;
-      transition: transform 0.3s;
-    }
-
-    .countdown-box:hover {
-      transform: scale(1.05);
+      font-family: sans-serif;
     }
 
     .countdown-number {
-      font-size: 1.8rem;
+      font-size: 1rem;
       font-weight: bold;
       color: #c2185b;
-      margin-bottom: 5px;
+      line-height: 1;
     }
 
     .countdown-label {
-      font-size: 0.85rem;
+      font-size: 0.6rem;
       color: #666;
+      margin-top: 1px;
     }
 
     @media (max-width: 400px) {
       .countdown-box {
-        min-width: 60px;
-        padding: 10px 5px;
+        min-width: 36px;
+        padding: 3px;
       }
 
       .countdown-number {
-        font-size: 1.3rem;
+        font-size: 0.9rem;
       }
 
       .countdown-label {
-        font-size: 0.70rem;
+        font-size: 0.55rem;
       }
 
       #countdown-page h1 {
-        font-size: 1.4rem;
+        font-size: 1.1rem;
       }
     }
   </style>
@@ -149,33 +135,33 @@
 
   <div class="countdown">
     <div class="countdown-box">
-      <div class="countdown-number" id="days">223</div>
+      <div class="countdown-number" id="days">0</div>
       <div class="countdown-label">Hari</div>
     </div>
     <div class="countdown-box">
-      <div class="countdown-number" id="hours">14</div>
+      <div class="countdown-number" id="hours">0</div>
       <div class="countdown-label">Jam</div>
     </div>
     <div class="countdown-box">
-      <div class="countdown-number" id="minutes">46</div>
+      <div class="countdown-number" id="minutes">0</div>
       <div class="countdown-label">Minit</div>
     </div>
     <div class="countdown-box">
-      <div class="countdown-number" id="seconds">50</div>
-      <div class="countdown-label">Saat</div><br><br><br><br>
+      <div class="countdown-number" id="seconds">0</div>
+      <div class="countdown-label">Saat</div>
     </div>
   </div>
 
-
   <script>
-    const weddingDate = new Date("2025-12-31T11:00:00").getTime();
-
+    const weddingDate = new Date("2025-12-31T10:00:00").getTime();
     function updateCountdown() {
       const now = new Date().getTime();
       const distance = weddingDate - now;
 
       if (distance < 0) {
-        document.querySelector(".countdown").innerHTML = "Majlis telah berlangsung!";
+        ["days","hours","minutes","seconds"].forEach(id => {
+          document.getElementById(id).textContent = "0";
+        });
         return;
       }
 
@@ -190,17 +176,14 @@
       document.getElementById("seconds").textContent = seconds;
     }
 
-    setInterval(updateCountdown, 1000);
     updateCountdown();
+    setInterval(updateCountdown, 1000);
   </script>
-
-</body>
-</html>
-  </section>
+</section>
 
 
 
-  
+
     <!-- Page 5 -->
 <!DOCTYPE html>
 <html lang="ms">
