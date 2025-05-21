@@ -68,28 +68,9 @@
 
 
  <!-- Page 4 -->
-<!DOCTYPE html>
-<html lang="ms">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Menanti Hari Bahagia</title>
+<section class="page" id="countdown-page" style="padding: 40px 20px; text-align: center; background-color: #fffafc;">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #fffafc;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 20px;
-      text-align: center;
-    }
-
-    h1 {
+    #countdown-page h1 {
       color: #c2185b;
       font-size: 2rem;
       margin-bottom: 30px;
@@ -97,21 +78,34 @@
 
     .countdown {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: flex-start;
       gap: 15px;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      scroll-behavior: smooth;
+    }
+
+    .countdown::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .countdown::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 3px;
     }
 
     .countdown-box {
       background: white;
       border-radius: 15px;
-      padding: 10px 5px;
-      min-width: 50px;
+      padding: 15px 10px;
+      min-width: 70px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       display: flex;
       flex-direction: column;
       align-items: center;
+      flex-shrink: 0;
       transition: transform 0.3s;
     }
 
@@ -131,27 +125,25 @@
       color: #666;
     }
 
-    @media (min-width: 480px) {
-      h1 {
-        font-size: 2.5rem;
-      }
-
+    @media (max-width: 400px) {
       .countdown-box {
-        min-width: 90px;
-        padding: 20px 15px;
+        min-width: 60px;
+        padding: 10px 5px;
       }
 
       .countdown-number {
-        font-size: 2rem;
+        font-size: 1.4rem;
       }
 
       .countdown-label {
-        font-size: 1rem;
+        font-size: 0.75rem;
+      }
+
+      #countdown-page h1 {
+        font-size: 1.5rem;
       }
     }
   </style>
-</head>
-<body>
 
   <h1>Menanti Hari Bahagia</h1>
 
@@ -173,10 +165,6 @@
       <div class="countdown-label">Saat</div>
     </div>
   </div>
-
-</body>
-</html>
-
 
 
   <script>
