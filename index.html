@@ -1,45 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ms">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Walimatulurus Haikal &Liya</title>
-  <link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Walimatulurus Haikal & Liya</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
     .page {
       padding: 30px 20px;
       margin-bottom: 30px;
       border-radius: 15px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-      box-sizing: border-box;
       background-color: #ffffff;
     }
+    .front-page {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #fffafc;
+      text-align: center;
+    }
+    .front-page button {
+      margin-top: 20px;
+      padding: 10px 25px;
+      background-color: maroon;
+      color: white;
+      font-size: 18px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+    .hidden-section {
+      display: none;
+    }
   </style>
-
 </head>
 <body>
 
-  <!-- Background Music -->
+  <!-- Muzik Latar -->
   <audio id="bg-music" loop>
     <source src="Hafiz Suip - Kisah Cinta Kita (Lyrics) (1).mp3" type="audio/mpeg"/>
   </audio>
 
-  <div class="flipbook">
+  <!-- ✅ HALAMAN DEPAN -->
+  <section class="page front-page">
+    <h1>WALIMATULURUS</h1>
+    <h2>Haikal</h2>
+    <p>&</p>
+    <h2>Liya</h2>
+    <button id="start-btn">BUKA</button>
+  </section>
 
-    <!-- Front Page -->
-    <section class="page front-page">
-      <h1>WALIMATULURUS</h1>
-      <h2>Haikal</h2>
-      <p>&<p>
-      <h2>Liya</h2>
-      <button id="start-btn">Buka</button>
-    </section>
+  <!-- ✅ KANDUNGAN UTAMA (DISOROK PADA MULA) -->
+  <div id="main-content" style="display: none;">
 
-
-
-
-    <!-- Page 2 -->
+ <!-- Page 2 -->
     <section class="page">
       <h2>السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</h2>
       <p>Dengan penuh kesyukuran ke hadrat ilahi, kami</p>
@@ -990,74 +1007,88 @@
   </style>
 
 </head>
-<body>
+<body>      
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
-
-
-  
   </div>
- 
+
+  <!-- ✅ SCRIPT UNTUK KAWAL PAPARAN -->
   <script>
     const startBtn = document.getElementById('start-btn');
     const music = document.getElementById('bg-music');
 
     function startInvitation() {
-      // Play music
+      // Mainkan muzik
       music.play().catch(e => console.log("Music autoplay blocked"));
 
-      // Auto scroll to next page
-      window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+      // Tunjukkan kandungan utama
+      document.getElementById('main-content').style.display = 'block';
+
+      // Sembunyikan halaman depan
+      const frontPage = document.querySelector('.front-page');
+      if (frontPage) frontPage.remove();
     }
 
-    // Button click to start invitation
-    startBtn.addEventListener('click', startInvitation);
+    if (startBtn) {
+      startBtn.addEventListener('click', startInvitation);
+    }
 
-    // Touch anywhere to start music (for mobile autoplay policy)
+    // Autoplay workaround for mobile
     document.body.addEventListener('touchstart', function once() {
       music.play().catch(() => {});
       document.body.removeEventListener('touchstart', once);
     });
+
+    // Toggle function for footer sections
+    let currentVisibleSection = null;
+    function toggleSection(id) {
+      const ids = ['Seksyen RSVP', 'Seksyen Money Gift', 'Seksyen Wishlist', 'Seksyen Contact', 'Seksyen Location'];
+
+      if (currentVisibleSection === id) {
+        ids.forEach(secId => document.getElementById(secId)?.classList.add('hidden-section'));
+        currentVisibleSection = null;
+        return;
+      }
+
+      ids.forEach(secId => document.getElementById(secId)?.classList.add('hidden-section'));
+      document.getElementById(id)?.classList.remove('hidden-section');
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+      currentVisibleSection = id;
+    }
+
+    function copyRek() {
+      const text = document.getElementById("rek").innerText;
+      navigator.clipboard.writeText(text).then(() => alert("Nombor akaun disalin"));
+    }
+
+    function tempah(button) {
+      button.innerText = '✔ Telah Ditempah';
+      button.disabled = true;
+    }
+
+    async function fetchCSVData() {
+      const url = "https://docs.google.com/spreadsheets/d/1BEs4b9m2mz2etkpcO5qoU10bFgreWH1Lft1MUI7YXVA/gviz/tq?tqx=out:csv";
+      const response = await fetch(url);
+      const csvText = await response.text();
+      const lines = csvText.trim().split("\\n").slice(1);
+
+      const tbody = document.querySelector("#hadiah-table tbody");
+      lines.forEach(line => {
+        const cols = line.split(",");
+        const nama = cols[0]?.replaceAll('"', '') || '';
+        const tracking = cols[1]?.replaceAll('"', '') || '';
+        const link = tracking ? `<a href="https://easyparcel.com/my/en/track/?tracking_number=${tracking}" target="_blank">Track</a>` : '-';
+
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${nama}</td>
+          <td>${tracking}</td>
+          <td>${link}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    fetchCSVData();
   </script>
 
 </body>
