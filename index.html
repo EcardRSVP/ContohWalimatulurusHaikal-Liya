@@ -866,24 +866,36 @@
 
   function toggleSection(id) {
     const ids = ['Seksyen RSVP', 'Seksyen Money Gift', 'Seksyen Wishlist', 'Seksyen Contact', 'Seksyen Location'];
+    const mainSection = document.getElementById('main-section');
 
-    // Jika seksyen yang ditekan adalah yang sedang aktif → sembunyikan semua
+    // Jika seksyen yang sama ditekan semula → tutup seksyen & tunjuk balik main content
     if (currentVisibleSection === id) {
       ids.forEach(secId => {
         const sec = document.getElementById(secId);
         if (sec) sec.classList.add('hidden-section');
       });
       currentVisibleSection = null;
+
+      // Tunjuk semula main content
+      if (mainSection) {
+        mainSection.style.display = 'block';
+      }
+
       return;
     }
 
-    // Sembunyikan semua dahulu
+    // Sembunyi semua seksyen footer
     ids.forEach(secId => {
       const sec = document.getElementById(secId);
       if (sec) sec.classList.add('hidden-section');
     });
 
-    // Tunjukkan seksyen yang diminta
+    // Sembunyi main content
+    if (mainSection) {
+      mainSection.style.display = 'none';
+    }
+
+    // Tunjuk seksyen yang diminta
     const selected = document.getElementById(id);
     if (selected) {
       selected.classList.remove('hidden-section');
