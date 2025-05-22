@@ -148,9 +148,3 @@ button {
   display: block;
   font-size: 11px;
 }
-
-.transparent-section {
-  background-color: transparent !important;
-  box-shadow: none !important;
-  padding-bottom: 20px !important;
-}

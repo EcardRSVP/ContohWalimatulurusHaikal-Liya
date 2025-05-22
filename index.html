@@ -84,7 +84,7 @@
   <div id="main-content" style="display: none;">
 
  <!-- Gabungan Page 2–4 -->
-    <section class="page">
+    <section class="page" id="main-section">
       <h2>السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</h2>
       <p>Dengan penuh kesyukuran ke hadrat ilahi, kami</p>
       <p><strong>Zulkefli Bin Abdullah & Fazilah Binti Ahmad Manaf</strong>
@@ -116,7 +116,7 @@
 
       <hr> 
 
-<section id="countdown-page" class="transparent-section">
+<section id="countdown-page">
     <h1>Menanti Hari Bahagia</h1>
 
     <div class="countdown" style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
@@ -169,7 +169,7 @@
       
      <hr> 
 
-    <section class="doa transparent-section">
+    <section class="doa">
     <p>
       بِسْمِ اللهِ الرَّحْمنِ الرَّحِيمِ<br>
       Ya Allah Ya Tuhan kami,<br>
@@ -179,16 +179,13 @@
       Sempurnakan agama mereka dengan berkat ikatan ini dan semoga jodoh pernikahan ini akan berkekalan hingga ke jannah.
     </p>
     <p><strong>Amin Ya Rabbal Alamin</strong></p>
-  
-<div class="footer-credit" style="margin-top: 40px; text-align: center;">
-  <p>#liyaterciptauntukhaikal</p>
-  <p>Created by KadDigitalNNA</p>
-</div>
-</section>
+  </section>
 </section>
 
-    <!-- removed misplaced footer-credit -->
-      
+    <section class="footer-credit">
+      <p>#liyaterciptauntukhaikal</p><br><br>
+      <p>Created by KadDigitalNNA</p>
+    </div>
 
   </div>
 
@@ -867,18 +864,47 @@
 <script>
   let currentVisibleSection = null;
 
-  function toggleSection(id) {
-    const ids = ['Seksyen RSVP', 'Seksyen Money Gift', 'Seksyen Wishlist', 'Seksyen Contact', 'Seksyen Location'];
+  
+function toggleSection(id) {
+  const ids = ['Seksyen RSVP', 'Seksyen Money Gift', 'Seksyen Wishlist', 'Seksyen Contact', 'Seksyen Location'];
+  const mainSection = document.getElementById('main-section');
 
-    // Jika seksyen yang ditekan adalah yang sedang aktif → sembunyikan semua
-    if (currentVisibleSection === id) {
-      ids.forEach(secId => {
-        const sec = document.getElementById(secId);
-        if (sec) sec.classList.add('hidden-section');
-      });
-      currentVisibleSection = null;
-      return;
+  // Jika seksyen yang ditekan adalah yang sedang aktif → sembunyikan semua
+  if (currentVisibleSection === id) {
+    ids.forEach(secId => {
+      const sec = document.getElementById(secId);
+      if (sec) sec.classList.add('hidden-section');
+    });
+    currentVisibleSection = null;
+
+    // Tunjukkan semula main content
+    if (mainSection) {
+      mainSection.style.display = 'block';
     }
+
+    return;
+  }
+
+  // Sembunyikan semua dahulu
+  ids.forEach(secId => {
+    const sec = document.getElementById(secId);
+    if (sec) sec.classList.add('hidden-section');
+  });
+
+  // Sembunyikan main content
+  if (mainSection) {
+    mainSection.style.display = 'none';
+  }
+
+  // Tunjukkan seksyen yang diminta
+  const selected = document.getElementById(id);
+  if (selected) {
+    selected.classList.remove('hidden-section');
+    selected.scrollIntoView({ behavior: "smooth" });
+  }
+
+  currentVisibleSection = id;
+}
 
     // Sembunyikan semua dahulu
     ids.forEach(secId => {
