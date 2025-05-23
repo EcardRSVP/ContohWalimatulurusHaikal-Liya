@@ -66,6 +66,11 @@
 </head>
 <body>
 
+    <!-- 🎥 Video Latar Global -->
+  <video autoplay muted loop id="bg-video">
+    <source src="RSVP V21.mp4" type="video/mp4">
+  </video>
+  
   <!-- Muzik Latar -->
   <audio id="bg-music" loop>
     <source src="Hafiz Suip - Kisah Cinta Kita (Lyrics) (1).mp3" type="audio/mpeg"/>
@@ -282,7 +287,7 @@
   <h2>🎁 Wishlist</h2>
   
   <div class="gift-item">
-    <img src="Microwave Oven.jpg" alt="Microwave Oven" style="width:80px;">
+    <img src="Microwave Oven.jpg" alt="Microwave Oven">
     <div class="gift-info">
       <div class="gift-title">Microwave Oven</div>
       <a href="https://s.shopee.com.my/Vu5yuSFl9" target="_blank">🔗 Shopee</a>
@@ -863,49 +868,50 @@
   <div class="footer-icon location" onclick="toggleSection('Seksyen Location')">📍<span>Location</span></div>
 </div>
 
+<!-- Bahagian Kandungan Tersembunyi -->
+<div id="rsvp" class="page" style="display: none;">RSVP content here</div>
+<div id="gift" class="page" style="display: none;">Money Gift content here</div>
+<div id="wishlist" class="page" style="display: none;">Wishlist content here</div>
+<div id="contact" class="page" style="display: none;">Contact content here</div>
+<div id="location" class="page" style="display: none;">Location content here</div>
+
 <!-- ✅ JavaScript -->
 <script>
   let currentVisibleSection = null;
 
-  function toggleSection(id) {
-    const ids = ['Seksyen RSVP', 'Seksyen Money Gift', 'Seksyen Wishlist', 'Seksyen Contact', 'Seksyen Location'];
-    const mainSection = document.getElementById('main-section');
+function toggleSection(id) {
+  const sections = ['rsvp', 'gift', 'wishlist', 'contact', 'location'];
+  const mainContent = document.getElementById('main-content');
 
-    // Jika seksyen yang sama ditekan semula → tutup seksyen & tunjuk balik main content
-    if (currentVisibleSection === id) {
-      ids.forEach(secId => {
-        const sec = document.getElementById(secId);
-        if (sec) sec.classList.add('hidden-section');
-      });
+  if (currentSection === id) {
+    // Jika klik sama — kembali ke main
+    sections.forEach(s => document.getElementById(s).style.display = 'none');
+    if (mainContent) mainContent.style.display = 'block';
+    currentSection = null;
+  } else {
+    // Papar satu, sorok lain
+    sections.forEach(s => document.getElementById(s).style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+    if (mainContent) mainContent.style.display = 'none';
+    currentSection = id;
+  }
+}
+
+      if (mainContent) mainContent.style.display = "block";
       currentVisibleSection = null;
+    } else {
+      // Jika ikon lain ditekan, sembunyikan semua, tunjukkan yang dipilih
+      sections.forEach(secId => {
+        const sec = document.getElementById(secId);
+        if (sec) sec.style.display = "none";
+      });
 
-      // Tunjuk semula main content
-      if (mainSection) {
-        mainSection.style.display = 'block';
-      }
+      const selectedSection = document.getElementById(id);
+      if (selectedSection) selectedSection.style.display = "block";
 
-      return;
+      if (mainContent) mainContent.style.display = "none";
+      currentVisibleSection = id;
     }
-
-    // Sembunyi semua seksyen footer
-    ids.forEach(secId => {
-      const sec = document.getElementById(secId);
-      if (sec) sec.classList.add('hidden-section');
-    });
-
-    // Sembunyi main content
-    if (mainSection) {
-      mainSection.style.display = 'none';
-    }
-
-    // Tunjuk seksyen yang diminta
-    const selected = document.getElementById(id);
-    if (selected) {
-      selected.classList.remove('hidden-section');
-      selected.scrollIntoView({ behavior: "smooth" });
-    }
-
-    currentVisibleSection = id;
   }
 
   function copyRek() {
@@ -922,7 +928,7 @@
     const url = "https://docs.google.com/spreadsheets/d/1BEs4b9m2mz2etkpcO5qoU10bFgreWH1Lft1MUI7YXVA/gviz/tq?tqx=out:csv";
     const response = await fetch(url);
     const csvText = await response.text();
-    const lines = csvText.trim().split("\\n").slice(1);
+    const lines = csvText.trim().split("\n").slice(1);
 
     const tbody = document.querySelector("#hadiah-table tbody");
     lines.forEach(line => {
@@ -947,79 +953,28 @@
 
 
 
- <!-- Page 6 -->
-      <!DOCTYPE html>
-<html lang="ms">
-<head>
-  <meta charset="UTF-8">
-  <title>Senarai Hadiah & Tracking</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      background-color: #f9f9f9;
-    }
-    h1 {
-      text-align: center;
-      color: #333;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 30px;
-    }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 12px;
-    }
-    th {
-      background-color: #f0f0f0;
-    }
-    tr:nth-child(even) {
-      background-color: #fcfcfc;
-    }
-    tr:hover {
-      background-color: #f1f1f1;
-    }
-    a {
-      color: #0066cc;
-    }
-  </style>
-
-  <style>
-    .page {
-      padding: 30px 20px;
-      margin-bottom: 30px;
-      border-radius: 15px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-      box-sizing: border-box;
-      background-color: #ffffff;
-    }
-  </style>
-
-</head>
-<body>      
-
-  </div>
-
   <!-- ✅ SCRIPT UNTUK KAWAL PAPARAN -->
  <script>
-const startBtn = document.getElementById('start-btn');
-const music = document.getElementById('bg-music');
+    const startBtn = document.getElementById('start-btn');
+    const music = document.getElementById('bg-music');
 
-function startInvitation() {
-  music.play().catch(e => console.log("Music autoplay blocked"));
-  document.getElementById('main-content').style.display = 'block';
-  const frontPage = document.querySelector('.front-page');
-  if (frontPage) frontPage.remove();
-}
+    function startInvitation() {
+      music.play().catch(() => console.log("Autoplay blocked"));
+      document.getElementById('main-content').style.display = 'block';
+      const frontPage = document.querySelector('.front-page');
+      if (frontPage) frontPage.style.display = 'none';
+    }
 
-if (startBtn) {
-  startBtn.addEventListener('click', startInvitation);
-}
+    if (startBtn) {
+      startBtn.addEventListener('click', startInvitation);
+    }
 
-document.body.addEventListener('touchstart', function once() {
-  music.play().catch(() => {});
-  document.body.removeEventListener('touchstart', once);
-});
-</script>
+    // Untuk iPhone/iPad autoplay
+    document.body.addEventListener('touchstart', function once() {
+      music.play().catch(() => {});
+      document.body.removeEventListener('touchstart', once);
+    });
+  </script>
+
+</body>
+</html>

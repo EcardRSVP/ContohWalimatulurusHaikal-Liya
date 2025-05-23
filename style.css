@@ -1,27 +1,51 @@
 body {
   font-family: 'Georgia', serif;
   text-align: center;
-  background: url('https://www.transparenttextures.com/patterns/cream-paper.png'); /* Soft textured paper background */
+  background: url('https://www.transparenttextures.com/patterns/cream-paper.png');
   color: #333;
   margin: 0;
   padding: 0;
-  padding-bottom: 120px; /* untuk beri ruang di bawah */
+  padding-bottom: 120px;
+  position: relative;
+  z-index: 1;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+/* 🎥 Latar Video */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
 section {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: transparent !important;
   margin: 30px auto;
-  padding: 30px 20px 120px 20px; /* Atas, Kanan, Bawah, Kiri */
+  padding: 30px 20px 120px 20px;
   max-width: 700px;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  scroll-margin-bottom: 100px; /* elak tersembunyi di bawah footer */
+  box-shadow: none !important;
+  scroll-margin-bottom: 100px;
+}
+
+.transparent-section {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  padding: 30px 20px; /* jika perlu */
 }
 
 .hero h1 {
   font-family: 'Times New Roman', serif;
   font-size: 36px;
-  color: #8B0000; /* Dark red */
+  color: #8B0000;
 }
 
 .hero p {
@@ -55,6 +79,7 @@ button {
   font-size: 16px;
   border-radius: 6px;
   cursor: pointer;
+  max-width: 100%;
 }
 
 button:hover {
@@ -67,7 +92,6 @@ footer {
   margin-top: 40px;
 }
 
-/* RESPONSIF CONTAINER */
 .container, .page, section {
   width: 100%;
   max-width: 1000px;
@@ -76,24 +100,16 @@ footer {
   box-sizing: border-box;
 }
 
-/* Imej responsif */
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* Responsive text */
 h1, h2, p {
   word-wrap: break-word;
 }
 
-/* Responsive button */
-button {
-  max-width: 100%;
-}
-
-/* RESPONSIF TAMBAHAN UNTUK SKRIN KECIL */
 @media (max-width: 768px) {
   h1, h2 {
     font-size: 1.2rem;
@@ -114,7 +130,12 @@ button {
 
   .gift-item img {
     width: 100%;
-    height: auto;
+    max-width: 180px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto 10px;
   }
 
   .footer {
@@ -122,7 +143,6 @@ button {
   }
 }
 
-/* Sticky Footer */
 .footer {
   position: fixed;
   bottom: 0;
@@ -147,4 +167,10 @@ button {
 .footer-icon span {
   display: block;
   font-size: 11px;
+}
+
+.transparent-section {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  padding-bottom: 20px !important;
 }
