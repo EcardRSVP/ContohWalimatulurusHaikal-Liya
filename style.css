@@ -1,5 +1,5 @@
 body {
-  font-family: 'Georgia', serif;
+  font-family: 'Ancizar Sans', sans-serif;
   text-align: center;
   background: url('https://www.transparenttextures.com/patterns/cream-paper.png');
   color: #333;
@@ -20,10 +20,19 @@ html {
   position: fixed;
   top: 0;
   left: 0;
-  min-width: 100%;
-  min-height: 100%;
+  width: 100vw;
+  height: 100vh;
   object-fit: cover;
   z-index: -1;
+}
+
+
+@media (max-width: 768px) {
+  #bg-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
 }
 
 section {
@@ -31,7 +40,7 @@ section {
   margin: 30px auto;
   padding: 30px 20px 120px 20px;
   max-width: 700px;
-  border-radius: 12px;
+  border-radius: 0;
   box-shadow: none !important;
   scroll-margin-bottom: 100px;
 }
@@ -43,7 +52,7 @@ section {
 }
 
 .hero h1 {
-  font-family: 'Times New Roman', serif;
+  font-family: 'Ancizar Sans', sans-serif;
   font-size: 36px;
   color: #8B0000;
 }
@@ -123,6 +132,37 @@ h1, h2, p {
     min-width: 60px;
   }
 
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: nowrap;       /* ❗ PENTING: jangan wrap ke baris lain */
+  overflow-x: auto;         /* Jika tak muat, boleh scroll kiri kanan */
+}
+
+.countdown-box {
+  flex: 1 0 22%;            /* Biarkan lebar fleksibel */
+  min-width: 60px;
+  min-height: 70px;
+  background: white;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+    .countdown-number {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #black;
+    }
+    .countdown-label {
+      font-size: 0.75rem;
+      margin-top: 3px;
+    }
+  
   .gift-item {
     flex-direction: column;
     align-items: flex-start;
@@ -173,4 +213,184 @@ h1, h2, p {
   background-color: transparent !important;
   box-shadow: none !important;
   padding-bottom: 20px !important;
+}
+
+
+/* ✅ RSVP Form Styling */
+form input[type="text"],
+form input[type="number"],
+form button[type="submit"] {
+  width: 90%;
+  max-width: 400px;
+  padding: 12px;
+  margin: 10px auto;
+  display: block;
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+form button[type="submit"] {
+  background-color: maroon;
+  color: white;
+  border: none;
+}
+
+    .phone-button {
+      font-family: 'Ancizar Sans', sans-serif;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 10px;
+      padding: 12px 24px;
+      font-size: 16px;
+      color: white;
+      background-color: #28a745;
+      border: none;
+      border-radius: 12px;
+      text-decoration: none;
+    }
+
+.phone-button:hover {
+  background-color: #218838;
+}
+
+.location-button {
+  font-family: 'Ancizar Sans', sans-serif;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px auto;
+  padding: 12px 24px;
+  font-size: 16px;
+  color: white;
+  background-color: #28a745;
+  border: none;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.location-button:hover {
+  background-color: #218838;
+}
+    
+.location-button img {
+  width: 24px;
+  height: 24px;
+}
+
+.qr-image {
+  display: block;
+  margin: 0 auto;
+  max-width: 250px;
+  width: 80%;
+  height: auto;
+  border-radius: 8px; /* opsyenal: untuk tepi lembut */
+}
+
+/* ✅ Font Custom Styles */
+.font-a {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+}
+
+.font-b {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+}
+
+.font-c {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+}
+
+.font-d {
+  font-family: 'Bonheur Royale', cursive;
+  font-size: 1.6rem;
+}
+
+.font-e {
+  font-family: 'Noto Serif Dives Akuru', serif;
+  font-size: 0.9rem;
+}
+
+/* Paksa font Ancizar Sans untuk semua teks biasa */
+body, h1, h2, h3, h4, h5, h6, p, span, div, strong, em, label, input, button, td, th {
+  font-family: 'Ancizar Sans', sans-serif;
+}
+
+.gallery-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* jarak antara butang dan gambar */
+  padding: 0 10px;
+}
+
+.gallery-viewport {
+  overflow: hidden;
+  width: 90vw; /* 90% daripada lebar skrin */
+  max-width: 100%;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
+.gallery-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.gallery-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.gallery-slide img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-prev,
+.gallery-next {
+  background: none !important;
+  color: black;
+  border: none;
+  font-size: 28px;
+  padding: 5px;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 0 !important;
+  width: auto;
+  height: auto;
+  display: inline;
+}
+
+    label {
+      display: block;
+      margin-top: 10px;
+
+ #form-container {
+      display: none;
+    }
+    .message {
+      font-weight: bold;
+      color: red;
+    }
+
+.gift-item {
+  margin-bottom: 40px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.gift-info {
+  padding: 15px;
 }
