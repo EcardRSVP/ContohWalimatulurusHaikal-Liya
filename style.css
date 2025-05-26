@@ -89,12 +89,6 @@ button:hover {
   background-color: #A52A2A;
 }
 
-footer {
-  font-size: 14px;
-  color: #777;
-  margin-top: 40px;
-}
-
 .container, .page, section, #main-content, .front-page {
   width: 100%;
   max-width: 390px;      /* saiz telefon */
@@ -172,7 +166,13 @@ h1, h2, p {
     display: block;
     margin: 0 auto 10px;
   }
-
+  
+footer {
+  font-size: 14px;
+  color: #777;
+  margin-top: 40px;
+}
+  
   .footer {
     flex-wrap: wrap;
   }
