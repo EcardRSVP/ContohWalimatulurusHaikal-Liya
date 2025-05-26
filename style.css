@@ -1,21 +1,35 @@
-body {
+
+/* ✅ Import font */
+@import url('https://fonts.googleapis.com/css2?family=Ancizar+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bonheur+Royale&family=Cinzel:wght@700&family=Cormorant+Garamond:wght@600&family=Great+Vibes&family=Parisienne&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  overflow-x: hidden;
   font-family: 'Ancizar Sans', sans-serif;
-  text-align: center;
+  font-size: 16px;
   background: url('https://www.transparenttextures.com/patterns/cream-paper.png');
   color: #333;
-  margin: 0;
-  padding: 0;
-  padding-bottom: 120px;
-  position: relative;
-  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-html {
-  margin: 0;
-  padding: 0;
+/* ✅ Page structure & sizing */
+.container, .page, section, #main-content, .front-page {
+  width: 100%;
+  max-width: 390px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  text-align: center;
+  min-height: 100vh;
 }
 
-/* 🎥 Latar Video */
+/* ✅ Background video scaled to page */
 #bg-video {
   position: absolute;
   top: 0;
@@ -29,363 +43,108 @@ html {
   display: block;
 }
 
-section {
-  background-color: transparent !important;
-  margin: 30px auto;
-  padding: 30px 20px 120px 20px;
-  max-width: 700px;
-  border-radius: 0;
-  box-shadow: none !important;
-  scroll-margin-bottom: 100px;
-}
-
-.transparent-section {
-  background-color: transparent !important;
-  box-shadow: none !important;
-  padding: 30px 20px; /* jika perlu */
-}
-
-.hero h1 {
-  font-family: 'Ancizar Sans', sans-serif;
-  font-size: 36px;
-  color: #8B0000;
-}
-
-.hero p {
-  font-size: 20px;
-  color: #5A5A5A;
-}
-
-h2 {
-  font-size: 28px;
-  color: #4A4A4A;
-  margin-bottom: 10px;
-}
-
-input, button {
-  padding: 10px;
-  margin: 10px;
-  width: 80%;
-  max-width: 400px;
-  font-size: 16px;
-}
-
-input {
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
-button {
-  background-color: #8B0000;
-  border: none;
-  color: white;
-  font-size: 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  max-width: 100%;
-}
-
-button:hover {
-  background-color: #A52A2A;
-}
-
-footer {
-  font-size: 14px;
-  color: #777;
-  margin-top: 40px;
-}
-
-.container, .page, section, #main-content, .front-page {
-  width: 100%;
-  max-width: 390px;      /* saiz telefon */
-  margin: 0 auto;
-  padding: 20px;
-  box-sizing: border-box;
-  text-align: center;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-h1, h2, p {
-  word-wrap: break-word;
-}
-
-@media (max-width: 768px) {
-  h1, h2 {
-    font-size: 1.2rem;
-  }
-
-  p {
-    font-size: 0.95rem;
-  }
-
-  .countdown div {
-    min-width: 60px;
-  }
-
-.countdown {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: nowrap;       /* ❗ PENTING: jangan wrap ke baris lain */
-  overflow-x: auto;         /* Jika tak muat, boleh scroll kiri kanan */
-}
-
-.countdown-box {
-  flex: 1 0 22%;            /* Biarkan lebar fleksibel */
-  min-width: 60px;
-  min-height: 70px;
-  background: white;
-  border-radius: 8px;
-  text-align: center;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-    .countdown-number {
-      font-size: 1.4rem;
-      font-weight: bold;
-      color: #black;
-    }
-    .countdown-label {
-      font-size: 0.75rem;
-      margin-top: 3px;
-    }
-  
-  .gift-item {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .gift-item img {
-    width: 100%;
-    max-width: 180px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 8px;
-    display: block;
-    margin: 0 auto 10px;
-  }
-
-  .footer {
-    flex-wrap: wrap;
-  }
-}
-
+/* ✅ Footer matches page width */
 .footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  background-color: #ffffff;
+  position: relative;
+  width: 100%;
+  max-width: 390px;
+  margin: 0 auto;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+  background: white;
+  padding: 10px;
   box-shadow: 0 -1px 5px rgba(0,0,0,0.1);
-  border-top: 1px solid #ddd;
   z-index: 1000;
 }
 
 .footer-icon {
   text-align: center;
   font-size: 20px;
-  cursor: pointer;
+  margin: 10px;
 }
-
 .footer-icon span {
   display: block;
   font-size: 11px;
 }
 
-.transparent-section {
-  background-color: transparent !important;
-  box-shadow: none !important;
-  padding-bottom: 20px !important;
-}
+/* ✅ Font classes */
+.font-a { font-family: 'Parisienne', cursive; }
+.font-b { font-family: 'Cinzel', serif; }
+.font-c { font-family: 'Great Vibes', cursive; }
+.font-d { font-family: 'Cormorant Garamond', serif; }
+.font-e { font-family: 'Bonheur Royale', cursive; }
 
+/* ✅ Other common elements */
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+p, label, input, button { font-size: 1rem; }
 
-/* ✅ RSVP Form Styling */
-form input[type="text"],
-form input[type="number"],
-form button[type="submit"] {
-  width: 90%;
-  max-width: 400px;
+input, button {
+  width: 100%;
   padding: 12px;
-  margin: 10px auto;
-  display: block;
+  margin-bottom: 12px;
   box-sizing: border-box;
-  border-radius: 8px;
-  font-size: 16px;
 }
-
-form button[type="submit"] {
+button {
   background-color: maroon;
   color: white;
   border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #a52a2a;
 }
 
-    .phone-button {
-      font-family: 'Ancizar Sans', sans-serif;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin: 10px;
-      padding: 12px 24px;
-      font-size: 16px;
-      color: white;
-      background-color: #28a745;
-      border: none;
-      border-radius: 12px;
-      text-decoration: none;
-    }
-
-.phone-button:hover {
-  background-color: #218838;
+/* ✅ Contact & Location boxes */
+.contact-box, .location-box {
+  background-color: #d0f0c0;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
-.location-button {
-  font-family: 'Ancizar Sans', sans-serif;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin: 20px auto;
-  padding: 12px 24px;
-  font-size: 16px;
-  color: white;
-  background-color: #28a745;
-  border: none;
-  border-radius: 12px;
-  text-decoration: none;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease;
-}
-
-.location-button:hover {
-  background-color: #218838;
-}
-    
-.location-button img {
-  width: 24px;
-  height: 24px;
-}
-
-.qr-image {
-  display: block;
-  margin: 0 auto;
-  max-width: 250px;
-  width: 80%;
-  height: auto;
-  border-radius: 8px; /* opsyenal: untuk tepi lembut */
-}
-
-/* ✅ Font Custom Styles */
-.font-a {
-  font-family: 'Cinzel', serif;
-  font-size: 1.2rem;
-}
-
-.font-b {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.6rem;
-}
-
-.font-c {
-  font-family: 'Great Vibes', cursive;
-  font-size: 2.5rem;
-}
-
-.font-d {
-  font-family: 'Bonheur Royale', cursive;
-  font-size: 1.6rem;
-}
-
-.font-e {
-  font-family: 'Noto Serif Dives Akuru', serif;
-  font-size: 0.9rem;
-}
-
-/* Paksa font Ancizar Sans untuk semua teks biasa */
-body, h1, h2, h3, h4, h5, h6, p, span, div, strong, em, label, input, button, td, th {
-  font-family: 'Ancizar Sans', sans-serif;
-}
-
+/* ✅ Gallery slider */
 .gallery-slider {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px; /* jarak antara butang dan gambar */
-  padding: 0 10px;
 }
-
 .gallery-viewport {
-  overflow: hidden;
-  width: 90vw; /* 90% daripada lebar skrin */
-  max-width: 100%;
-  margin: 0 auto;
-  border-radius: 12px;
-}
-
-.gallery-track {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
+  overflow-x: hidden;
   width: 100%;
 }
-
+.gallery-track {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
 .gallery-slide {
   min-width: 100%;
   box-sizing: border-box;
+  padding: 0 10px;
 }
-
 .gallery-slide img {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
-  display: block;
-}
-
-.gallery-prev,
-.gallery-next {
-  background: none !important;
-  color: black;
-  border: none;
-  font-size: 28px;
-  padding: 5px;
-  cursor: pointer;
-  z-index: 2;
-  border-radius: 0 !important;
-  width: auto;
   height: auto;
-  display: inline;
-}
-
-    label {
-      display: block;
-      margin-top: 10px;
-
- #form-container {
-      display: none;
-    }
-    .message {
-      font-weight: bold;
-      color: red;
-    }
-
-.gift-item {
-  margin-bottom: 40px;
-  border: 1px solid #ddd;
+  object-fit: cover;
   border-radius: 10px;
-  overflow: hidden;
-  background-color: #fff;
 }
-
-.gift-info {
-  padding: 15px;
+.gallery-prev, .gallery-next {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  border-radius: 50%;
 }
+.gallery-prev { left: 5px; }
+.gallery-next { right: 5px; }
