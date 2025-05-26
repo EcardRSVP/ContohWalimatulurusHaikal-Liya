@@ -13,21 +13,14 @@ html, body {
   text-align: center;
 }
 
-/* ✅ Page structure & sizing */
 .container, .page, section, #main-content, .front-page {
   width: 100%;
-  max-width: 390px;
+  max-width: 390px;      /* saiz telefon */
   margin: 0 auto;
-  padding: 30px 20px;
+  padding: 20px;
   box-sizing: border-box;
   text-align: center;
-  min-height: 100vh;
 }
-
-
-
-
-
 
 /* 🎥 Latar Video */
 #bg-video {
