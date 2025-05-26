@@ -31,18 +31,18 @@ html {
 
 /* ✅ Footer matches page width */
 .footer {
-  position: fixed; //
+  position: fixed;
   width: 100%;
   max-width: 390px;
   margin: 0 auto;
-  display: flex; //
-  flex-wrap: wrap; //
-  justify-content: space-around; //
-  align-items: center; //
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
   background: white;
   padding: 10px;
-  box-shadow: 0 -1px 5px rgba(0,0,0,0.1); //
-  z-index: 1000; //
+  box-shadow: 0 -1px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
 }
 
 .footer-icon {
