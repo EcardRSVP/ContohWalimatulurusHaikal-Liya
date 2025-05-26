@@ -32,8 +32,8 @@ html {
 section {
   background-color: transparent !important;
   margin: 30px auto;
-  padding: 30px 20px 120px 20px;
-  max-width: 700px;
+  padding: 30px 20px;
+  max-width: 390px;
   border-radius: 0;
   box-shadow: none !important;
   scroll-margin-bottom: 100px;
@@ -97,11 +97,12 @@ footer {
 
 .container, .page, section, #main-content, .front-page {
   width: 100%;
-  max-width: 390px;      /* saiz telefon */
+  max-width: 390px;
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
   text-align: center;
+  min-height: 100vh;
 }
 
 img {
@@ -151,7 +152,7 @@ h1, h2, p {
     .countdown-number {
       font-size: 1.4rem;
       font-weight: bold;
-      color: #black;
+      color: #000000;
     }
     .countdown-label {
       font-size: 0.75rem;
@@ -181,8 +182,10 @@ h1, h2, p {
 .footer {
   position: fixed;
   bottom: 0;
-  left: 0;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 390px;
   height: 60px;
   background-color: #ffffff;
   display: flex;
@@ -369,6 +372,7 @@ body, h1, h2, h3, h4, h5, h6, p, span, div, strong, em, label, input, button, td
     label {
       display: block;
       margin-top: 10px;
+ }
 
  #form-container {
       display: none;
@@ -389,3 +393,4 @@ body, h1, h2, h3, h4, h5, h6, p, span, div, strong, em, label, input, button, td
 .gift-info {
   padding: 15px;
 }
+
