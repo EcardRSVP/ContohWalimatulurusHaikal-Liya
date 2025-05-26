@@ -13,6 +13,22 @@ html, body {
   text-align: center;
 }
 
+/* ✅ Page structure & sizing */
+.container, .page, section, #main-content, .front-page {
+  width: 100%;
+  max-width: 390px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  text-align: center;
+  min-height: 100vh;
+}
+
+
+
+
+
+
 /* 🎥 Latar Video */
 #bg-video {
   position: absolute;
@@ -91,15 +107,6 @@ footer {
   font-size: 14px;
   color: #777;
   margin-top: 40px;
-}
-
-.container, .page, section, #main-content, .front-page {
-  width: 100%;
-  max-width: 390px;      /* saiz telefon */
-  margin: 0 auto;
-  padding: 20px;
-  box-sizing: border-box;
-  text-align: center;
 }
 
 img {
