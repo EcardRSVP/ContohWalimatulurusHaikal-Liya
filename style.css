@@ -1,39 +1,38 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100vw;
-  overflow-x: hidden;
+body {
   font-family: 'Ancizar Sans', sans-serif;
-  font-size: 16px;
+  text-align: center;
   background: url('https://www.transparenttextures.com/patterns/cream-paper.png');
   color: #333;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 120px;
+  position: relative;
+  z-index: 1;
 }
 
-.container, .page, section, #main-content, .front-page {
-  width: 100%;
-  max-width: 390px;      /* saiz telefon */
-  margin: 0 auto;
-  padding: 20px;
-  box-sizing: border-box;
-  text-align: center;
+html {
+  margin: 0;
+  padding: 0;
 }
 
 /* 🎥 Latar Video */
 #bg-video {
-  position: absolute;
+  position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 390px;
-  height: 100%;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   object-fit: cover;
   z-index: -1;
-  display: block;
+}
+
+
+@media (max-width: 768px) {
+  #bg-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
 }
 
 section {
@@ -100,6 +99,14 @@ footer {
   font-size: 14px;
   color: #777;
   margin-top: 40px;
+}
+
+.container, .page, section {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 img {
