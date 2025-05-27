@@ -17,23 +17,29 @@ html {
 
 /* 🎥 Latar Video */
 #bg-video {
-  position: absolute;
+  position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 390px;
-  height: 100%;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   object-fit: cover;
   z-index: -1;
-  display: block;
+}
+
+
+@media (max-width: 768px) {
+  #bg-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
 }
 
 section {
   background-color: transparent !important;
   margin: 30px auto;
-  padding: 30px 20px;
-  max-width: 390px;
+  padding: 30px 20px 120px 20px;
+  max-width: 700px;
   border-radius: 0;
   box-shadow: none !important;
   scroll-margin-bottom: 100px;
@@ -95,14 +101,12 @@ footer {
   margin-top: 40px;
 }
 
-.container, .page, section, #main-content, .front-page {
+.container, .page, section {
   width: 100%;
-  max-width: 390px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
-  text-align: center;
-  min-height: 100vh;
 }
 
 img {
@@ -152,7 +156,7 @@ h1, h2, p {
     .countdown-number {
       font-size: 1.4rem;
       font-weight: bold;
-      color: #000000;
+      color: #black;
     }
     .countdown-label {
       font-size: 0.75rem;
@@ -182,10 +186,8 @@ h1, h2, p {
 .footer {
   position: fixed;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 390px;
+  left: 0;
+  right: 0;
   height: 60px;
   background-color: #ffffff;
   display: flex;
@@ -368,29 +370,3 @@ body, h1, h2, h3, h4, h5, h6, p, span, div, strong, em, label, input, button, td
   height: auto;
   display: inline;
 }
-
-    label {
-      display: block;
-      margin-top: 10px;
- }
-
- #form-container {
-      display: none;
-    }
-    .message {
-      font-weight: bold;
-      color: red;
-    }
-
-.gift-item {
-  margin-bottom: 40px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  overflow: hidden;
-  background-color: #fff;
-}
-
-.gift-info {
-  padding: 15px;
-}
-
