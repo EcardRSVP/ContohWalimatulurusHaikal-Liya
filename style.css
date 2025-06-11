@@ -7,7 +7,7 @@ body {
   padding: 0;
   padding-bottom: 120px;
   position: relative;
-  z-index: 1;
+  
 }
 
 html {
@@ -24,31 +24,27 @@ html {
   height: 100vh;
   object-fit: cover;
   z-index: -1;
-}
-
-
-@media (max-width: 768px) {
-  #bg-video {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-  }
+  pointer-events: none;
 }
 
 section {
   background-color: transparent !important;
   margin: 30px auto;
-  padding: 30px 20px 120px 20px;
-  max-width: 700px;
+  padding: 30px 20px;
+  max-width: 390px;
   border-radius: 0;
   box-shadow: none !important;
   scroll-margin-bottom: 100px;
 }
 
-.transparent-section {
-  background-color: transparent !important;
-  box-shadow: none !important;
-  padding: 30px 20px; /* jika perlu */
+.transparent-section,
+section#countdown-page,
+section.galeri,
+section.doa {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+  min-height: auto;
 }
 
 .hero h1 {
@@ -95,18 +91,44 @@ button:hover {
   background-color: #A52A2A;
 }
 
+button.copy-btn {
+  background-color: #8B0000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+button.copy-btn:hover {
+  background-color: #a50000;
+}
+
+
 footer {
   font-size: 14px;
   color: #777;
   margin-top: 40px;
 }
 
-.container, .page, section {
+body, html {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.container, .page, section, #main-content, .front-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
+  max-width: 390px;         /* ✅ ikut saiz iPhone */
+  margin: 0 auto;           /* ✅ center horizontal */
   padding: 20px;
   box-sizing: border-box;
+  min-height: 100vh;
 }
 
 img {
@@ -128,55 +150,38 @@ h1, h2, p {
     font-size: 0.95rem;
   }
 
-  .countdown div {
-    min-width: 60px;
-  }
-
-.countdown {
+  .countdown {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 10px;
-  flex-wrap: nowrap;       /* ❗ PENTING: jangan wrap ke baris lain */
-  overflow-x: auto;         /* Jika tak muat, boleh scroll kiri kanan */
+  flex-wrap: nowrap;
+  margin-top: 10px;
 }
 
 .countdown-box {
-  flex: 1 0 22%;            /* Biarkan lebar fleksibel */
-  min-width: 60px;
-  min-height: 70px;
+  width: 60px;
+  height: 65px;
   background: white;
-  border-radius: 8px;
-  text-align: center;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
 }
 
-    .countdown-number {
-      font-size: 1.4rem;
-      font-weight: bold;
-      color: #black;
-    }
-    .countdown-label {
-      font-size: 0.75rem;
-      margin-top: 3px;
-    }
-  
-  .gift-item {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+.countdown-number {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
 
-  .gift-item img {
-    width: 100%;
-    max-width: 180px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 8px;
-    display: block;
-    margin: 0 auto 10px;
-  }
+.countdown-label {
+  font-size: 0.75rem;
+  margin-top: 2px;
+}
+
 
   .footer {
     flex-wrap: wrap;
@@ -186,8 +191,10 @@ h1, h2, p {
 .footer {
   position: fixed;
   bottom: 0;
-  left: 0;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 390px;
   height: 60px;
   background-color: #ffffff;
   display: flex;
@@ -209,10 +216,14 @@ h1, h2, p {
   font-size: 11px;
 }
 
-.transparent-section {
-  background-color: transparent !important;
-  box-shadow: none !important;
-  padding-bottom: 20px !important;
+.transparent-section,
+section#countdown-page,
+section.galeri,
+section.doa {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+  min-height: auto;
 }
 
 
@@ -235,6 +246,14 @@ form button[type="submit"] {
   color: white;
   border: none;
 }
+
+ #form-container {
+      display: none;
+    }
+    .message {
+      font-weight: bold;
+      color: red;
+    }
 
     .phone-button {
       font-family: 'Ancizar Sans', sans-serif;
@@ -289,6 +308,63 @@ form button[type="submit"] {
   width: 80%;
   height: auto;
   border-radius: 8px; /* opsyenal: untuk tepi lembut */
+}
+
+.purchase-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.purchase-btn {
+  display: inline-block;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+}
+
+.purchase-btn img {
+  width: 45px;
+  height: 45px;
+}
+
+.shopee-btn {
+  background-color: #f1582b;
+  color: white;
+}
+
+.shopee-btn:hover {
+  background-color: #e14a1c;
+}
+
+.whatsapp-btn {
+  background-color: #25d366;
+  color: white;
+}
+
+.whatsapp-btn:hover {
+  background-color: #1ebd5b;
+}
+
+.gift-links a {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  margin: 4px;
+  display: inline-block;
+  font-family: 'Ancizar Sans', sans-serif;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
+}
+
+.gift-links a:hover {
+  background-color: #a50000;
 }
 
 /* ✅ Font Custom Styles */
@@ -369,4 +445,139 @@ body, h1, h2, h3, h4, h5, h6, p, span, div, strong, em, label, input, button, td
   width: auto;
   height: auto;
   display: inline;
+}
+
+    label {
+      display: block;
+      margin-top: 10px;
+ }
+
+.gift-item {
+  margin-bottom: 0px;
+  border: none;
+  border-radius: transparent;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.nama-ayah,
+.simbol-dan,
+.nama-ibu,
+.nama-pengantin,
+.pilihan-hati,
+.nama-pasangan {
+  margin: 4px 0; /* Atur ikut kesesuaian */
+  line-height: 1.2;
+}
+
+
+section *, .wishlist *, #main-content * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+#hadiah-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fdf0e5; /* 🎨 peach soft */
+  color: #333;
+  font-size: 14px;
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+#hadiah-table th, #hadiah-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #ebddd5;
+  text-align: left;
+}
+
+#hadiah-table th {
+  background-color: #f7dccc; /* warna lembut untuk header */
+  font-weight: bold;
+  color: #5a3731;
+}
+
+#hadiah-table tr:last-child td {
+  border-bottom: none;
+}
+
+#Seksyen\ Wishlist {
+  padding-bottom: 80px; /* ruang bawah seksyen */
+}
+
+
+
+/* ✅ KEMASKINI UNTUK KECILKAN JARAK ANTARA COUNTDOWN, GALERI, DOA */
+
+.transparent-section,
+section#countdown-page,
+section.galeri,
+section.doa {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+  min-height: auto;
+}
+
+section#countdown-page,
+section.galeri,
+section.doa {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  margin-bottom: 0px !important;
+  min-height: auto;
+}
+
+hr {
+  display: block;
+  border: none;
+  border-top: 3px solid #888;
+  margin: 24px auto;
+  width: 90%;
+  max-width: 360px;
+}
+
+@media (max-width: 768px) {
+  hr {
+    border-top: 3px solid #999;
+  }
+}
+
+/* Balut semua content supaya max 390px macam telefon */
+#wrapper {
+  max-width: 390px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Ubah video supaya tidak penuh satu skrin laptop */
+@media (min-width: 768px) {
+  #bg-video {
+    width: 390px;
+    height: 100vh;
+    left: 50%;
+    transform: translateX(-50%);
+    object-fit: cover;
+    position: fixed;
+  }
+}
+
+.gift-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center !important;
+  text-align: center;
+}
+
+  .gift-item img {
+    margin: 0 auto 10px;
+  }
+
+.gift-info {
+  padding: 2px 8px;
 }
