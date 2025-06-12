@@ -70,93 +70,12 @@
    <div id="wrapper">
      <!-- SEMUA KANDUNGAN TERMASUK section.front-page DAN #main-content -->
      
-  <!-- ✅ HALAMAN DEPAN -->
-  <section class="page front-page">
-    <h1 class="font-b">WALIMATULURUS</h1>
-    <h2><span class="font-c">Haikal</span></h2>
-    <h2><span class="font-a">&</span></h2>
-    <h2 class="font-c">Liya</h2>
-    <button id="start-btn">BUKA</button>
-  </section>
-
-
   <!-- ✅ KANDUNGAN UTAMA (DISOROK PADA MULA) -->
   <div id="main-content" style="display: none;">
 
- <!-- Gabungan Page 2–4 -->
-<section id="countdown-page" class="transparent-section">
-    <h1 class="font-e">COUNTDOWN</h1>
-
-    <div class="countdown">
-      <div class="countdown-box">
-        <div class="countdown-number" id="days">0</div>
-        <div class="countdown-label">Hari</div>
-      </div>
-      <div class="countdown-box">
-        <div class="countdown-number" id="hours">0</div>
-        <div class="countdown-label">Jam</div>
-      </div>
-      <div class="countdown-box">
-        <div class="countdown-number" id="minutes">0</div>
-        <div class="countdown-label">Minit</div>
-      </div>
-      <div class="countdown-box">
-        <div class="countdown-number" id="seconds">0</div>
-        <div class="countdown-label">Saat</div>
-      </div>
-    </div>
-
-    <script>
-      const weddingDate = new Date("2025-12-31T10:00:00").getTime();
-      function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = weddingDate - now;
-
-        if (distance < 0) {
-          ["days", "hours", "minutes", "seconds"].forEach(id => {
-            document.getElementById(id).textContent = "0";
-          });
-          return;
-        }
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        document.getElementById("days").textContent = days;
-        document.getElementById("hours").textContent = hours;
-        document.getElementById("minutes").textContent = minutes;
-        document.getElementById("seconds").textContent = seconds;
-      }
-
-      updateCountdown();
-      setInterval(updateCountdown, 1000);
-    </script>
-</section>
-      
-     <hr> 
-
-  <section class="galeri transparent-section">
-  <h1 class="font-e">GALERI</h1>
-  <div class="gallery-slider">
-    <button class="gallery-prev">&#10094;</button>
-    
-    <div class="gallery-viewport"> 
-    <div class="gallery-track">
-      <div class="gallery-slide"><img src="GambarGaleri1.jpg" alt="Gambar 1"></div>
-      <div class="gallery-slide"><img src="GambarGaleri2.jpg" alt="Gambar 2"></div>
-      <div class="gallery-slide"><img src="GambarGaleri3.jpg" alt="Gambar 3"></div>
-      <div class="gallery-slide"><img src="GambarGaleri4.jpg" alt="Gambar 4"></div>
-      </div>
-    </div>
-    
-    <button class="gallery-next">&#10095;</button>
-  </div>
-</section>
+ 
 
 <div class="footer-credit" style="margin-top: 40px; text-align: center;">
-  <p>#liyaterciptauntukhaikal</p>
   <p>Created by KadDigitalNNA</p><br><br><br>
   
   <!-- Spacer -->
