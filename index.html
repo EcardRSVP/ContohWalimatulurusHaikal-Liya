@@ -239,7 +239,7 @@
 <!-- ✅ Seksyen RSVP -->
 <section id="Seksyen RSVP" class="hidden-section">
   <h2>💌 RSVP</h2><br><br>
-  <form action="https://docs.google.com/forms/d/e/1FAIpQLSc9IzXMjZMt3t2Cw3oAe7X0rxRXWlFwxaOa4T6YK_rCCq2LQA/formResponse" method="POST" target="_blank">
+  <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSedlvRozEgmCPlheAte9YGIS-VxcumFs7FBSSeqURJLB9chiA/formResponse" method="POST" target="_blank">
 
     
     <!-- Nama -->
@@ -305,7 +305,7 @@
 </div>
 
   <p><strong>Klik Sini,</strong> 
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSem_DlU7GTwg5g2go8DXKt7b4RoloeqMIq3YDVhOpEIT4UnqA/viewform?usp=header" 
+  <a href="https://docs.google.com/forms/d/1VXAIXeavSW3gzxTqoxiIHwbu2kRlxtg-T8xOFP58fq8/viewform?usp=header" 
      target="_blank" 
      class="btn btn-form">untuk mengisi maklumat Pemberian Hadiah</a>
 </p>
@@ -1287,7 +1287,9 @@
   window.addEventListener("DOMContentLoaded", fetchCSVData);
 
   async function fetchCSVData() {
-    const url = "https://docs.google.com/spreadsheets/d/1BEs4b9m2mz2etkpcO5qoU10bFgreWH1Lft1MUI7YXVA/gviz/tq?tqx=out:csv";
+    const url = "https://docs.google.com/spreadsheets/d/1eIlPjmaf57Cqx6sSUoBHTyhURAYmVV-6JlY-L8Q1T2c/gviz/tq?tqx=out:csv";
+
+    
     try {
       const response = await fetch(url);
       const csvText = await response.text();
