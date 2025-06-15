@@ -22,7 +22,7 @@ html {
   left: 0;
   width: auto;
   height: 100vh;
-  object-fit: cover;
+  object-fit: contain;
   z-index: -1;
   pointer-events: none;
 }
