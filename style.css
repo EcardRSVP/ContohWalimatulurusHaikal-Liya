@@ -393,6 +393,12 @@ form button[type="submit"] {
   font-size: 0.9rem;
 }
 
+.font-f {
+  font-family: 'Scheherazade New', serif;
+  font-size: 1.1rem;
+}
+
+
 /* Paksa font Ancizar Sans untuk semua teks biasa */
 body, h1, h2, h3, h4, h5, h6, p, span, div, strong, em, label, input, button, td, th {
   font-family: 'Ancizar Sans', sans-serif;
