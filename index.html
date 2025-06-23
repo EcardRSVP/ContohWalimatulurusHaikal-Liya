@@ -60,12 +60,12 @@
 
       <!-- 🎥 Video Latar Global -->
   <video autoplay muted playsinline loop id="bg-video">
-  <source src="full video.mp4" type="video/mp4">
+  <source src="B1.mp4" type="video/mp4">
 </video>
 
   <!-- Muzik Latar -->
   <audio id="bg-music" loop>
-    <source src="ARVIAN DWI - SATU SHAF DI BELAKANGKU (OFFICIAL LYRIC VIDEO).mp3" type="audio/mpeg"/>
+    <source src="ARVIAN DWI - SATU SHAF DI BELAKANGKU OFFICIAL LYRIC VIDEO.mp3" type="audio/mpeg"/>
   </audio>
 
    <div id="wrapper">
@@ -83,6 +83,15 @@
 
   <!-- ✅ KANDUNGAN UTAMA (DISOROK PADA MULA) -->
   <div id="main-content" style="display: none;">
+
+<!-- ✅ Sticky Footer Menu -->
+<div class="footer">
+  <div class="footer-icon rsvp" onclick="toggleSection('Seksyen RSVP')">💌<span>RSVP</span></div>
+  <div class="footer-icon money" onclick="toggleSection('Seksyen Money Gift')">💵<span>Money Gift</span></div>
+  <div class="footer-icon wishlist" onclick="toggleSection('Seksyen Wishlist')">🎁<span>Wishlist</span></div>
+  <div class="footer-icon contact" onclick="toggleSection('Seksyen Contact')">📞<span>Contact</span></div>
+  <div class="footer-icon location" onclick="toggleSection('Seksyen Location')">📍<span>Location</span></div>
+</div>
 
  <!-- Gabungan Page 2–4 -->
     <section class="page">
@@ -239,7 +248,7 @@
     <!-- Page 5 -->
 <!-- ✅ Seksyen RSVP -->
 <section id="Seksyen RSVP" class="hidden-section">
-  <h2>💌 RSVP</h2><br><br>
+  <h2>💌 RSVP</h2>
   <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSedlvRozEgmCPlheAte9YGIS-VxcumFs7FBSSeqURJLB9chiA/formResponse" method="POST" target="_blank">
 
     <!-- Nama -->
@@ -275,18 +284,18 @@
   
 <!-- ✅ Seksyen Money Gift -->
 <section id="Seksyen Money Gift" class="hidden-section">
-  <h2>💵 Money Gift</h2><br><br>
+  <h2>💵 Money Gift</h2>
   <p><strong>Nama Bank :</strong> Maybank Berhad</p>
   <p><strong>Nama :</strong> Muhammad Haikal Bin Zulkefli</p>
   <p><strong>Nombor Akaun:</strong> <span id="rek">1234567890</span></p>
   <button onclick="copyRek()">Copy</button>
   <p>Imbas kod QR</p>
-  <img src="Contoh QR.jpg" alt="Kod QR" class="qr-image" /><br><br><br><br><br><br>
+  <img src="Contoh QR.jpg" alt="Kod QR" class="qr-image" /><br><br><br><br>
 </section>
 
 <!-- ✅ Seksyen Wishlist (Ringkasan) -->
 <section id="Seksyen Wishlist" class="hidden-section">
-  <h2>🎁 Wishlist</h2><br><br>
+  <h2>🎁 Wishlist</h2>
 
   <div style="text-align: center; margin-bottom: 20px;">
   <h3><strong>Alamat Penghantaran</strong></h3>
@@ -1339,53 +1348,63 @@
   </a>
 </section>
 
-<!-- ✅ Sticky Footer Menu -->
-<div class="footer">
-  <div class="footer-icon rsvp" onclick="toggleSection('Seksyen RSVP')">💌<span>RSVP</span></div>
-  <div class="footer-icon money" onclick="toggleSection('Seksyen Money Gift')">💵<span>Money Gift</span></div>
-  <div class="footer-icon wishlist" onclick="toggleSection('Seksyen Wishlist')">🎁<span>Wishlist</span></div>
-  <div class="footer-icon contact" onclick="toggleSection('Seksyen Contact')">📞<span>Contact</span></div>
-  <div class="footer-icon location" onclick="toggleSection('Seksyen Location')">📍<span>Location</span></div>
+
+<!-- ✅ POPUP OVERLAY -->
+<div id="popupOverlay" class="popup-overlay" onclick="closePopup()">
+  <div id="popupContent" class="popup-section" onclick="event.stopPropagation()">
+    <!-- Kandungan popup akan dimasukkan sini -->
+  </div>
 </div>
+
 
 <!-- ✅ JavaScript -->
 <script>
-  let currentVisibleSection = null;
+function toggleSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  const overlay = document.getElementById("popupOverlay");
+  const popupContent = document.getElementById("popupContent");
 
-  function toggleSection(id) {
-    const sections = [
-      'Seksyen RSVP',
-      'Seksyen Money Gift',
-      'Seksyen Wishlist',
-      'Seksyen Contact',
-      'Seksyen Location'
-    ];
+  if (!section || !overlay || !popupContent) return;
 
-    const mainContent = document.getElementById('main-content');
+  const current = popupContent.getAttribute("data-current");
 
-    if (currentVisibleSection === id) {
-      // Jika ikon ditekan semula, sembunyikan semua & tunjuk balik main content
-      sections.forEach(secId => {
-        const sec = document.getElementById(secId);
-        if (sec) sec.style.display = "none";
-      });
-
-      if (mainContent) mainContent.style.display = "block";
-      currentVisibleSection = null;
-    } else {
-      // Jika ikon lain ditekan, sembunyikan semua, tunjukkan yang dipilih
-      sections.forEach(secId => {
-        const sec = document.getElementById(secId);
-        if (sec) sec.style.display = "none";
-      });
-
-      const selectedSection = document.getElementById(id);
-      if (selectedSection) selectedSection.style.display = "block";
-
-      if (mainContent) mainContent.style.display = "none";
-      currentVisibleSection = id;
-    }
+  // Jika seksyen sama sedang dipaparkan → tutup
+  if (current === sectionId) {
+    closePopup();
+    return;
   }
+
+  // Clone kandungan section & buang h2 asal
+  const cloned = section.cloneNode(true);
+  const h2 = cloned.querySelector("h2");
+  if (h2) h2.remove();
+
+  // Tambah semula satu tajuk sahaja
+  popupContent.innerHTML = `
+    <div style="padding-bottom: 10px; padding-top: 70px;">
+      <h2 style="margin-bottom: 12px; text-align: center; font-weight: bold;">
+        ${section.querySelector('h2')?.innerHTML || ''}
+      </h2>
+      ${cloned.innerHTML}
+    </div>
+  `;
+
+  popupContent.setAttribute("data-current", sectionId);
+  overlay.style.display = "flex";
+  document.body.style.overflow = 'hidden';
+}
+
+function closePopup() {
+  const overlay = document.getElementById("popupOverlay");
+  const popupContent = document.getElementById("popupContent");
+
+  if (overlay && popupContent) {
+    overlay.style.display = "none";
+    popupContent.innerHTML = "";
+    popupContent.removeAttribute("data-current");
+    document.body.style.overflow = 'auto';
+  }
+}
 
 function copyRek() {
     const text = document.getElementById("rek").innerText;
@@ -1503,6 +1522,8 @@ function copyRek() {
 
    <!-- ✅ SCRIPT UNTUK PAPAR STATUS TEMPAHAN -->
 <script src="script.js"></script>
-  
+
+
+
 </body>
 </html>
