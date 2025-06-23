@@ -1300,10 +1300,8 @@
   window.addEventListener("DOMContentLoaded", fetchCSVData);
 
   async function fetchCSVData() {
-    const url = "https://docs.google.com/spreadsheets/d/1eIlPjmaf57Cqx6sSUoBHTyhURAYmVV-6JlY-L8Q1T2c/gviz/tq?tqx=out:csv";
+    const url = "https://docs.google.com/spreadsheets/d/1WOhaj8rhvwNR2CW9e5Rw624-wiA_drhFdM-c3j-KgJ4/gviz/tq?tqx=out:csv";
 
-    
-    try {
       const response = await fetch(url);
       const csvText = await response.text();
       const lines = csvText.trim().split("\n").slice(1); // buang header
@@ -1426,7 +1424,7 @@ function copyRek() {
   }
 
   async function fetchCSVData() {
-    const url = "https://docs.google.com/spreadsheets/d/1eIlPjmaf57Cqx6sSUoBHTyhURAYmVV-6JlY-L8Q1T2c/gviz/tq?tqx=out:csv";
+    const url = "https://docs.google.com/spreadsheets/d/1WOhaj8rhvwNR2CW9e5Rw624-wiA_drhFdM-c3j-KgJ4/gviz/tq?tqx=out:csv";
     try {
       const response = await fetch(url);
       const csvText = await response.text();
