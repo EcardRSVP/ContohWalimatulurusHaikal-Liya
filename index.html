@@ -1420,40 +1420,6 @@ function copyRek() {
     });
   }
   
-  function tempah(button) {
-    button.innerText = '✔ Telah Ditempah';
-    button.disabled = true;
-  }
-
-  async function fetchCSVData() {
-    const url = "https://docs.google.com/spreadsheets/d/1WOhaj8rhvwNR2CW9e5Rw624-wiA_drhFdM-c3j-KgJ4/gviz/tq?tqx=out:csv";
-    try {
-      const response = await fetch(url);
-      const csvText = await response.text();
-      const lines = csvText.trim().split("\n").slice(1);
-
-      const tbody = document.querySelector("#hadiah-table tbody");
-      lines.forEach(line => {
-        const cols = line.split(",");
-        const nama = cols[0]?.replaceAll('"', '') || '';
-        const tracking = cols[1]?.replaceAll('"', '') || '';
-        const link = tracking
-          ? `<a href="https://easyparcel.com/my/en/track/?tracking_number=${tracking}" target="_blank">Track</a>`
-          : '-';
-
-        const tr = document.createElement("tr");
-        tr.innerHTML = `
-          <td>${nama}</td>
-          <td>${tracking}</td>
-          <td>${link}</td>
-        `;
-        tbody.appendChild(tr);
-      });
-    } catch (err) {
-      console.error("Gagal mengambil data CSV:", err);
-    }
-  }
-
   window.addEventListener("DOMContentLoaded", function () {
     const urlParams = new URLSearchParams(window.location.search);
     const ref = urlParams.get("ref");
