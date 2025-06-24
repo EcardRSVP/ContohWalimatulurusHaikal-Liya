@@ -1299,20 +1299,26 @@
 
 <!-- ✅ Script Tabletop.js -->
 <script>
-  window.addEventListener("DOMContentLoaded", fetchCSVData);
+window.addEventListener("DOMContentLoaded", fetchCSVData);
 
   async function fetchCSVData() {
     const url = "https://docs.google.com/spreadsheets/d/1WOhaj8rhvwNR2CW9e5Rw624-wiA_drhFdM-c3j-KgJ4/gviz/tq?tqx=out:csv";
 
+    try {
       const response = await fetch(url);
       const csvText = await response.text();
       const lines = csvText.trim().split("\n").slice(1); // buang header
 
       const tbody = document.querySelector("#hadiah-table tbody");
+
       lines.forEach(line => {
         const cols = line.split(",");
+
+        // Debugging: check struktur sebenar baris
+        console.log(cols);
+
         const namaPemberi = cols[1]?.replace(/"/g, "") || "-";   // indeks 1 = Nama Pemberi
-        const namaBarang = cols[3]?.replace(/"/g, "") || "-";    // indeks 2 = Nama Barang
+        const namaBarang = cols[3]?.replace(/"/g, "") || "-";    // indeks 3 = Nama Barang
 
         const tr = document.createElement("tr");
         tr.innerHTML = `<td>${namaPemberi}</td><td>${namaBarang}</td>`;
