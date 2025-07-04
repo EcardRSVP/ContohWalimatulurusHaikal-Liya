@@ -369,23 +369,26 @@ form button[type="submit"] {
 
 /* ✅ Font Custom Styles */
 .font-a {
-  font-family: 'Cinzel', serif;
-  font-size: 1.2rem;
+  font-family: 'Libertinus Math', serif;
+  font-size: 1.6rem;
+  color: black;
 }
 
 .font-b {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
+  color: black;
 }
 
 .font-c {
-  font-family: 'Great Vibes', cursive;
+  font-family: 'Ephesis', cursive;
   font-size: 2.5rem;
+  color: black;
 }
 
 .font-d {
-  font-family: 'Bonheur Royale', cursive;
-  font-size: 1.6rem;
+  font-family: 'Estonia', cursive;
+  font-size: 1.8rem;
 }
 
 .font-e {
